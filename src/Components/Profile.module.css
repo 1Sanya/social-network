@@ -1,0 +1,9 @@
+.item {
+    font-size: 60px;
+}
+
+
+.item.active {
+    color: gold;
+
+}
