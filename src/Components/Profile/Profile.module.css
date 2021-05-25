@@ -1,0 +1,25 @@
+.item {
+    background-color: #333336;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 3px;
+}
+.columns {
+    display: flex;
+
+}
+.narrow_column {
+    width: 33%;
+    margin-left: 12px;
+}
+
+.wide_column {
+    width: 66%;
+    background-color: #333336;
+    padding: 15px;
+    border-radius: 3px;
+    height: 600px;
+}
+
+
+

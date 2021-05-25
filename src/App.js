@@ -1,11 +1,11 @@
 import './App.css';
 import React from "react";
-import Nav from "./Components/Nav";
-import Profile from "./Components/Profile";
+import Nav from "./Components/Nav/Nav";
+import Profile from "./Components/Profile/Profile";
 
 function App() {
   return (
-    <div>
+    <div className='app_wr'>
         <Nav/>
         <Profile/>
 

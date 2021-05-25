@@ -5,6 +5,20 @@ body {
 }
 
 .app_wr {
+    margin: 0 auto;
+    margin-top: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "nav profile";
+
     max-width: 960px;
-    align-items: center;
+}
+
+.Nav {
+    grid-area: nav;
+}
+
+.Profile {
+    grid-area: profile;
 }
