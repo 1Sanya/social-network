@@ -1,7 +1,7 @@
 import React from "react";
-import s from './Gifts.module.css'
+import s from './ComVideMusic.module.css'
 
-let Gifts = ()=> {
+let ComVideMusic = ()=> {
     return (
         <div className={s.gifts_wr}>
 
@@ -9,4 +9,4 @@ let Gifts = ()=> {
     )
 }
 
-export default Gifts
+export default ComVideMusic

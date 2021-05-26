@@ -1,4 +1,6 @@
-.item {
+
+
+.page_block {
     background-color: #333336;
     margin-bottom: 10px;
     padding: 15px;
@@ -9,16 +11,13 @@
 
 }
 .narrow_column {
-    width: 33%;
-    margin-left: 12px;
+    width: 30%;
+    margin:0 12px;
 }
 
 .wide_column {
     width: 66%;
-    background-color: #333336;
-    padding: 15px;
     border-radius: 3px;
-    height: 600px;
 }
 
 

@@ -1,3 +1,11 @@
 .nav_wr {
-    background-color: gold;
+}
+
+.single_li {
+    display: flex;
+}
+
+.li_text {
+    padding-left: 10px;
+    color: #333336;
 }

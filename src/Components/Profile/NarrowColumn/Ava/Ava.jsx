@@ -1,12 +1,10 @@
 import React from "react";
-import './Ava.module.css'
 import s from './Ava.module.css'
-import Gifts from "../Gifts/Gifts";
 
-let Ava = ()=> {
+let Ava = (props)=> {
     return (
         <div>
-
+            <img src={`${props.link}`} alt=""/>
         </div>
     )
 }
