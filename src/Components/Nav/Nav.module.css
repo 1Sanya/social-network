@@ -1,11 +1,23 @@
 .nav_wr {
+    padding-top: 10px;
+    width: 100%;
 }
+
 
 .single_li {
     display: flex;
+    padding: 5px 0 5px 5px;
+    border-radius: 3px;
+
+    cursor: pointer;
+}
+
+.single_li:hover {
+    background-color: #333336;
 }
 
 .li_text {
+    font-size: 13px;
     padding-left: 10px;
-    color: #333336;
+    color: #777;
 }

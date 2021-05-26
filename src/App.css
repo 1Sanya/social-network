@@ -9,7 +9,7 @@ body {
     margin-top: 10px;
 
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 140px 1fr;
     grid-template-areas: "nav profile";
 
     max-width: 960px;
