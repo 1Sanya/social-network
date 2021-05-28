@@ -1,23 +1,36 @@
 .nav_wr {
     padding-top: 10px;
-    width: 100%;
 }
 
-
-.single_li {
+.li_wr {
     display: flex;
-    padding: 5px 0 5px 5px;
     border-radius: 3px;
+    align-items: start;
+    padding: 7px 0;
 
-    cursor: pointer;
 }
 
-.single_li:hover {
+.li_wr svg {
+    padding: 0 8px;
+}
+
+.li_wr a {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.li_wr:hover {
     background-color: #333336;
 }
 
-.li_text {
+.li {
     font-size: 13px;
-    padding-left: 10px;
     color: #777;
+    width: 85%;
+
+
+    cursor: pointer;
+
+    text-decoration: none;
 }

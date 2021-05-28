@@ -3,7 +3,7 @@ import s from './Ava.module.css'
 
 let Ava = (props)=> {
     return (
-        <div>
+        <div className={s.img}>
             <img src={`${props.link}`} alt=""/>
         </div>
     )
