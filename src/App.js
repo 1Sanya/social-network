@@ -2,20 +2,21 @@ import './App.css';
 import React from "react";
 import Nav from "./Components/Nav/Nav";
 import Profile from "./Components/Profile/Profile";
-import Messenger from "./Components/Messenger/Messenger";
 import {BrowserRouter, Route, Redirect} from "react-router-dom";
+import Dialogs from "./Components/Dialogs/Dialogs";
 
+function App(props) {
 
-function App() {
     return (
-        <BrowserRouter>
-            <Redirect to="/profile" />
 
+
+        <BrowserRouter>
             <div className='app_wr'>
+                <Redirect to="/profile" />
                 <Nav/>
                 <div className='app_wr_content'>
-                <Route path='/profile' component={Profile}/>
-                <Route  path='/messenger' component={Messenger}/>
+                    <Route path='/profile' render={ ()=> <Profile />}/>
+                    <Route path='/messenger' render={ () => <Dialogs />}/>
                 </div>
             </div>
         </BrowserRouter>

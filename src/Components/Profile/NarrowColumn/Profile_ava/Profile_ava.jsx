@@ -1,7 +1,7 @@
 import React from "react";
-import s from './Ava.module.css'
+import s from './Profile_ava.module.css'
 
-let Ava = (props)=> {
+let Profile_ava = (props)=> {
     return (
         <div className={s.img}>
             <img src={`${props.link}`} alt=""/>
@@ -9,4 +9,4 @@ let Ava = (props)=> {
     )
 }
 
-export default Ava
+export default Profile_ava

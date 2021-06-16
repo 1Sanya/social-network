@@ -1,7 +1,7 @@
 import React from "react";
-import s from './Photos.module.css'
+import s from './Profile_photos.module.css'
 
-let Photos = ()=> {
+let Profile_photos = ()=> {
     return (
         <div className={s.photosWr}>
 
@@ -9,4 +9,4 @@ let Photos = ()=> {
     )
 }
 
-export default Photos
+export default Profile_photos

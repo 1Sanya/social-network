@@ -1,11 +1,11 @@
 import React from "react";
-import s from './Friends.module.css'
+import s from './Profile_friends.module.css'
 
-let Friends = ()=> {
+let Profile_friends = ()=> {
     return (
         <div className={s.friends_wr}>
         </div>
     )
 }
 
-export default Friends
+export default Profile_friends

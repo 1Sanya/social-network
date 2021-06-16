@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Gifts.module.css'
+import s from './Profile_gifts.module.css'
 
 let Gifts = ()=> {
     return (

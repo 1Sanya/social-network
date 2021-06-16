@@ -1,0 +1,11 @@
+.post {
+    height: 380px;
+
+    background-color: #333336;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 3px;
+}
+p{
+    color: #fff;
+}

@@ -1,7 +1,7 @@
 import React from "react";
-import s from './DiscrLinks.module.css'
+import s from './Profile_links.module.css'
 
-let DiscrLinks = ()=> {
+let Profile_links = ()=> {
     return (
         <div className={s.LinksWr}>
 
@@ -9,4 +9,4 @@ let DiscrLinks = ()=> {
     )
 }
 
-export default DiscrLinks
+export default Profile_links
