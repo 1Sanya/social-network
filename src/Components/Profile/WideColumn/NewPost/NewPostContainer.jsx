@@ -14,13 +14,11 @@ let mapDispatchToProps = (dispatch) => {
     return {
         createPost: () => {
             dispatch(addPostActionCreator());
-            console.log('baba')
         },
         changeNewPostText: (text) => {
             let action = newPostTextActionCreator(text);
             dispatch(action);
 
-            console.log('asd')
         }
 
     }

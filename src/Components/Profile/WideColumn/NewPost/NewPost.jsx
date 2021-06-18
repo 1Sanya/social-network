@@ -7,15 +7,11 @@ let NewPost = (props)=> {
     let onAddPost = () => {
         props.createPost();
 
-        console.log("tapped");
-
     }
 
     let onPostChange = () => {
         let text = inputRef.current.value;
         props.changeNewPostText(text);
-
-        console.log("changed");
 
     }
     return (
