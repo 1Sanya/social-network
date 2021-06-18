@@ -5,6 +5,7 @@ import Profile from "./Components/Profile/Profile";
 import {BrowserRouter, Route} from "react-router-dom";
 import Dialogs from "./Components/Dialogs/Dialogs";
 import FriendsContainer from "./Components/Friends/FriendsContainer";
+import PhotosContainer from "./Components/Photos/PhotosContainer";
 
 function App(props) {
 
@@ -18,6 +19,7 @@ function App(props) {
                     <Route path='/profile' render={ ()=> <Profile />}/>
                     <Route path='/messenger' render={ () => <Dialogs />}/>
                     <Route path='/friends' render={ () => <FriendsContainer />}/>
+                    <Route path='/photos' render={ () => <PhotosContainer />}/>
                 </div>
             </div>
         </BrowserRouter>
