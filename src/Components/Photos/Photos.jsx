@@ -6,6 +6,7 @@ import Photos_list from "./Photos_list/Photos_list";
 let Photos = (props) => {
     return (
         <div>
+            Photos
             <Photos_name/>
             <Photos_tabs/>
             <Photos_list/>

@@ -11,6 +11,7 @@ let reducers = combineReducers({
     photosPage: photosReducer
 });
 
+
 let store = createStore(reducers);
 
 export default store;

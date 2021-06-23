@@ -1,0 +1,21 @@
+a.link {
+    margin: 0 4px -1px;
+    padding: 18px 6px 20px 6px;
+
+    color: #777777;
+    text-decoration: none;
+}
+
+a.link.selected{
+    border-bottom: 3px white solid;
+    color: white;
+}
+
+.li {
+    color:green;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}

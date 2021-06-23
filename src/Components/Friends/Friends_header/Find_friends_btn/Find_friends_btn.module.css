@@ -1,0 +1,16 @@
+.btn {
+    margin: 14px 10px 0;
+    border: none;
+    border-radius: 4px;
+
+
+    padding: 7px 16px 8px;
+    line-height: 11px;
+    color: white;
+    background-color: #666666;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: .9;
+}

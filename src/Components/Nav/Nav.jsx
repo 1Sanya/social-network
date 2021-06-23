@@ -1,10 +1,8 @@
 import React from "react";
 import s from './Nav.module.css'
-import NavLi from './navLi/NavLi'
 import {CgProfile} from 'react-icons/cg';
 import {FiMessageCircle} from 'react-icons/fi'
-import {IoPeopleOutline} from 'react-icons/all'
-import {HiOutlinePhotograph} from 'react-icons/all'
+import {HiOutlinePhotograph, IoPeopleOutline} from 'react-icons/all'
 import {NavLink} from "react-router-dom";
 
 

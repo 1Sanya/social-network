@@ -1,0 +1,23 @@
+.wrapper {
+    font-family: FontAwesome, serif;
+
+    display: flex;
+    flex-direction: row;
+
+
+    height: 46px;
+}
+
+.input {
+    border: 0;
+    border-left: 20px #444446 solid;
+    width: 100%;
+
+    padding: 14px 140px 13px 28px;
+    background-color: #444446;
+}
+
+.input:focus {
+    outline: none;
+    color: #ffffff;
+}

@@ -1,4 +1,6 @@
-
+.nav_wr {
+    margin-right: 12px;
+}
 
 .li_wr {
     display: flex;
@@ -31,5 +33,7 @@
 
     cursor: pointer;
 
+
     text-decoration: none;
 }
+
