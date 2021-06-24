@@ -37,10 +37,30 @@
 }
 
 .contact_link {
-    padding-right: 12px;
+    padding: 0 4px 0 4px;
 
     font-size: 14px;
     color: #ffffff;
     text-decoration: none;
 }
 
+.contact_link:first-child{
+    padding-left: 0;
+}
+
+.dot {
+    position: relative;
+    top: 3px;
+}
+
+.elsePhotoWr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.delete_btn {
+    cursor: pointer;
+    padding: 10px 10px 0 0;
+}

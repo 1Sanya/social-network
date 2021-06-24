@@ -1,14 +1,11 @@
 let FOLLOW_TOGGLE = 'FOLLOW_TOGGLE';
 let OPED_DIALOG = 'OPEN-DIALOG';
 let CALL = 'CALL';
+let SET_USERS = 'SET_USERS';
+
 
 let initialState = {
-    profiles: [
-         {id: 1, name: 'Sanya', isFollow: true, pic: 'https://svirtus.cdnvideo.ru/TvRTmt9sgudd3kSzLsTE_HeqZus=/0x0:583x585/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/66/661cc81674bd7cd63f56bdc2826fb8b3.png?m=cf0455e62a7aa51de43f6a1947ff0198'},
-         {id: 2, name: 'Danya', isFollow: true, pic: 'https://svirtus.cdnvideo.ru/TvRTmt9sgudd3kSzLsTE_HeqZus=/0x0:583x585/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/66/661cc81674bd7cd63f56bdc2826fb8b3.png?m=cf0455e62a7aa51de43f6a1947ff0198'},
-         {id: 3, name: 'Dima', isFollow: false, pic: 'https://svirtus.cdnvideo.ru/TvRTmt9sgudd3kSzLsTE_HeqZus=/0x0:583x585/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/66/661cc81674bd7cd63f56bdc2826fb8b3.png?m=cf0455e62a7aa51de43f6a1947ff0198'},
-         {id: 4, name: 'Nasty', isFollow: true, pic: 'https://svirtus.cdnvideo.ru/TvRTmt9sgudd3kSzLsTE_HeqZus=/0x0:583x585/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/66/661cc81674bd7cd63f56bdc2826fb8b3.png?m=cf0455e62a7aa51de43f6a1947ff0198'}
-    ]
+    profiles: []
 }
 
 
@@ -25,6 +22,11 @@ let friendsReducer = (state = initialState, action) => {
                     return n;
                 })
             }
+        case SET_USERS: {
+            return {
+                ...state, profiles: action.users
+            }
+        }
         case OPED_DIALOG:
             return {
                 state
@@ -41,6 +43,7 @@ let friendsReducer = (state = initialState, action) => {
 export const followAC = (userId) => ({ type: FOLLOW_TOGGLE, userId: userId })
 export const OpenDialogAC = (userId) => ({ type: OPED_DIALOG, userId: userId })
 export const CallAC = (userId) => ({ type: CALL, userId: userId })
+export const setUsersAC = (users) => ({ type: SET_USERS, users: users})
 
 
 export default friendsReducer;
