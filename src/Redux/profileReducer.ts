@@ -1,16 +1,31 @@
+import {AnyAction} from "redux";
+
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
+type postsType = {
+    name: string, text: string, likes: number
 
-let initialState = {
-    posts: [
-        {name: 'Sanya', text: 'Bilo ne slojno, eto po lubvi', likes: 0},
-        {name: 'Danya', text: 'Na football go?', likes: 0}
-    ],
-    newPostText: 'Snus'
 }
 
-const profileReducer = (state = initialState,action) => {
+type stateType = {
+    posts: Array<postsType>,
+    newPostText: string
+}
+
+
+let initialState: stateType  = {
+    posts: [
+        {name: 'Sanya', text: 'Bilo ne slojno, eto po lubvi', likes: 3},
+        {name: 'Danya', text: 'Na football go?', likes: 0}
+    ],
+    newPostText: 'snus'
+}
+
+
+
+
+const profileReducer = (state = initialState,action: AnyAction ) => {
     switch (action.type) {
         case ADD_POST: {
 
@@ -34,7 +49,7 @@ const profileReducer = (state = initialState,action) => {
 }
 
 export const addPostActionCreator = () => ({type: ADD_POST})
-export const newPostTextActionCreator = (text) =>
+export const newPostTextActionCreator = (text: string) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
 export default profileReducer;

@@ -4,6 +4,7 @@ import messengerReducer from "./messengerReducer";
 import friendsReducer from "./friendsReducer";
 import photosReducer from "./photosReducer";
 
+
 let reducers = combineReducers({
     profilePage: profileReducer,
     messengerPage: messengerReducer,

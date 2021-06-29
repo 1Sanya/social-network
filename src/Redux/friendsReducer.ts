@@ -1,15 +1,32 @@
+import {AnyAction} from "redux";
+
 let FOLLOW_TOGGLE = 'FOLLOW_TOGGLE';
 let OPED_DIALOG = 'OPEN-DIALOG';
 let CALL = 'CALL';
 let SET_USERS = 'SET_USERS';
 
+type profilesType = {
+    name: string | null,
+    id: number | null,
+    uniqueUrlName: null,
+    photos: {
+        small: null,
+        large: null
+    },
+    status: null,
+    isFollow: false | null
+}
 
-let initialState = {
+type stateType = {
+    profiles: Array<profilesType>
+}
+
+let initialState: stateType = {
     profiles: []
 }
 
 
-let friendsReducer = (state = initialState, action) => {
+let friendsReducer = (state = initialState, action: AnyAction) => {
 
     switch (action.type) {
         case FOLLOW_TOGGLE:
@@ -40,10 +57,10 @@ let friendsReducer = (state = initialState, action) => {
     }
 }
 
-export const followAC = (userId) => ({ type: FOLLOW_TOGGLE, userId: userId })
-export const OpenDialogAC = (userId) => ({ type: OPED_DIALOG, userId: userId })
-export const CallAC = (userId) => ({ type: CALL, userId: userId })
-export const setUsersAC = (users) => ({ type: SET_USERS, users: users})
+export const followAC = (userId: number) => ({ type: FOLLOW_TOGGLE, userId: userId })
+export const OpenDialogAC = (userId: number) => ({ type: OPED_DIALOG, userId: userId })
+export const CallAC = (userId: number) => ({ type: CALL, userId: userId })
+export const setUsersAC = (users: number) => ({ type: SET_USERS, users: users})
 
 
 export default friendsReducer;

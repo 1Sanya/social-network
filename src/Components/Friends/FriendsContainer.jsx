@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
-import Friends from "./Friends";
 import {CallAC, followAC, OpenDialogAC, setUsersAC} from "../../Redux/friendsReducer";
+import Friends from "./Friends";
 
 
 

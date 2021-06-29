@@ -9,29 +9,39 @@ import * as axios from 'axios'
 
 import s from './Friends.module.css'
 
-let Friends = (props) => {
+class Friends extends React.Component{
 
-    if(props.profiles.length === 0) {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-            props.setUsers(response.data.items);
-        })
+    componentDidMount() {
+       axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+           this.props.setUsers(response.data.items);
+       })
+   }
+
+
+
+
+    render() {
+        return (
+            <div className={s.wrapper} >
+                <div >
+                    <Friends_header/>
+                    <Friends_search/>
+                    <Friends_list profiles={this.props.profiles} followToggle={this.props.followToggle} setUsers={this.props.setUsers}/>
+                </div>
+                <div>
+                    <Peoples_category/>
+                    <May_be_friends/>
+                </div>
+
+            </div>
+
+        )
     }
 
-    return (
-        <div className={s.wrapper} >
-            <div >
-                <Friends_header/>
-                <Friends_search/>
-                <Friends_list profiles={props.profiles} followToggle={props.followToggle} setUsers={props.setUsers}/>
-            </div>
-            <div>
-                <Peoples_category/>
-                <May_be_friends/>
-            </div>
 
-        </div>
 
-    )
 }
+
+
 
 export default Friends;
