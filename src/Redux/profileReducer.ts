@@ -8,13 +8,13 @@ type postsType = {
 
 }
 
-type stateType = {
+export  type stateType = {
     posts: Array<postsType>,
     newPostText: string
 }
 
 
-let initialState: stateType  = {
+let initialState: stateType = {
     posts: [
         {name: 'Sanya', text: 'Bilo ne slojno, eto po lubvi', likes: 3},
         {name: 'Danya', text: 'Na football go?', likes: 0}
@@ -23,9 +23,7 @@ let initialState: stateType  = {
 }
 
 
-
-
-const profileReducer = (state = initialState,action: AnyAction ) => {
+const profileReducer = (state = initialState, action: AnyAction) => {
     switch (action.type) {
         case ADD_POST: {
 
@@ -47,9 +45,16 @@ const profileReducer = (state = initialState,action: AnyAction ) => {
             return state;
     }
 }
+type addPostAT = {
+    type: typeof ADD_POST
+}
+export const addPostAC = ():addPostAT => ({type: ADD_POST})
 
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const newPostTextActionCreator = (text: string) =>
+type newPostTextAT = {
+    type: typeof UPDATE_NEW_POST_TEXT,
+    newText: string
+}
+export const newPostTextAC = (text: string):newPostTextAT =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
 export default profileReducer;

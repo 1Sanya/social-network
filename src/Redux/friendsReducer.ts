@@ -25,14 +25,13 @@ let initialState: stateType = {
     profiles: []
 }
 
-
 let friendsReducer = (state = initialState, action: AnyAction) => {
 
     switch (action.type) {
         case FOLLOW_TOGGLE:
             return {
                 ...state,
-                profiles: state.profiles.map (n => {
+                profiles: state.profiles.map(n => {
                     if (action.userId === n.id) {
                         return {...n, isFollow: !n.isFollow}
                     }
@@ -53,14 +52,33 @@ let friendsReducer = (state = initialState, action: AnyAction) => {
                 state
             }
 
-        default: return state;
+        default:
+            return state;
     }
 }
+type followAT = {
+    type: typeof FOLLOW_TOGGLE,
+    userId: number
+}
+export const followAC = (userId: number):followAT => ({type: FOLLOW_TOGGLE, userId: userId})
 
-export const followAC = (userId: number) => ({ type: FOLLOW_TOGGLE, userId: userId })
-export const OpenDialogAC = (userId: number) => ({ type: OPED_DIALOG, userId: userId })
-export const CallAC = (userId: number) => ({ type: CALL, userId: userId })
-export const setUsersAC = (users: number) => ({ type: SET_USERS, users: users})
+type OpenDialogAT = {
+    type: typeof OPED_DIALOG,
+    userId:number
+}
+export const OpenDialogAC = (userId: number):OpenDialogAT => ({type: OPED_DIALOG, userId: userId})
+
+type CallAT = {
+    type: typeof OPED_DIALOG,
+    userId: number
+}
+export const CallAC = (userId: number):CallAT => ({type: CALL, userId: userId})
+
+type setUsersAT = {
+    type: typeof SET_USERS,
+    users: Array<profilesType>
+}
+export const setUsersAC = (users: number):setUsersAT => ({type: SET_USERS, users: users})
 
 
 export default friendsReducer;

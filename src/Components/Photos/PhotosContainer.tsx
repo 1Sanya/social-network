@@ -3,15 +3,13 @@ import {connect} from "react-redux";
 import Photos from "./Photos";
 
 let mapPropsToState = (state) => {
-    return {
-
-    }
+    return {}
 }
 
 let mapDispatchToState = (dispatch) => {
 
 }
 
-let PhotosContainer = connect (mapPropsToState, mapDispatchToState) (Photos)
+let PhotosContainer = connect(mapPropsToState, mapDispatchToState)(Photos)
 
 export default PhotosContainer;

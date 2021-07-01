@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Profile_links.module.css'
 
-let Profile_links = ()=> {
+let Profile_links = () => {
     return (
         <div className={s.LinksWr}>
 

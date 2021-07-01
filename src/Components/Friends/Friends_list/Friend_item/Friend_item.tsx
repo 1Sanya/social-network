@@ -6,7 +6,7 @@ import {BiUserPlus, BsDot, HiOutlineX} from "react-icons/all";
 let Friend_item = (props) => {
     return (
         <div className={s.wrapper}>
-            <a href= {props.id}><img className={s.ava} src={props.img} alt=""/></a>
+            <a href={props.id}><img className={s.ava} src={props.img} alt=""/></a>
 
             <div className={s.elsePhotoWr}>
                 <div className={s.info}>
@@ -19,8 +19,12 @@ let Friend_item = (props) => {
 
                 </div>
 
-                <div className={s.delete_btn}> {props.isFollow ? <HiOutlineX onClick={ () => {props.followToggle(props.id)}} color='#555556' size='1.4em'/>
-                                                                : <BiUserPlus onClick={ () => {props.followToggle(props.id)}} color='#555556' size='1.4em'/>}
+                <div className={s.delete_btn}> {props.isFollow ? <HiOutlineX onClick={() => {
+                        props.followToggle(props.id)
+                    }} color='#555556' size='1.4em'/>
+                    : <BiUserPlus onClick={() => {
+                        props.followToggle(props.id)
+                    }} color='#555556' size='1.4em'/>}
                 </div>
 
             </div>

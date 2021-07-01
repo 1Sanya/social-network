@@ -1,6 +1,6 @@
 import React from "react"
 
-let Dialogs_header = (props)=> {
+let Dialogs_chats = (props) => {
     return (
 
         <div>
@@ -9,4 +9,4 @@ let Dialogs_header = (props)=> {
     )
 }
 
-export default Dialogs_header
+export default Dialogs_chats

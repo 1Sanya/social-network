@@ -5,7 +5,7 @@ import Dialogs_chats from "./DIalogs_chats/Dialogs_chats";
 import Dialogs_footer from "./DIalogs_footer/Dialogs_footer";
 
 
-let Dialogs = (props)=> {
+let Dialogs = (props) => {
 
     return (
         <div className={s.page_wr}>

@@ -1,6 +1,6 @@
 import React from "react"
 
-let Dialogs_chats = (props)=> {
+let Dialogs_footer = (props) => {
     return (
 
         <div>
@@ -9,4 +9,4 @@ let Dialogs_chats = (props)=> {
     )
 }
 
-export default Dialogs_chats
+export default Dialogs_footer

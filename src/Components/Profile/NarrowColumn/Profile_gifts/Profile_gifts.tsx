@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Profile_gifts.module.css'
 
-let Gifts = ()=> {
+let Gifts = () => {
     return (
         <div className={s.gifts_wr}>
 

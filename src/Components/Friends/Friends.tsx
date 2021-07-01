@@ -9,24 +9,23 @@ import * as axios from 'axios'
 
 import s from './Friends.module.css'
 
-class Friends extends React.Component{
+class Friends extends React.Component {
 
     componentDidMount() {
-       axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-           this.props.setUsers(response.data.items);
-       })
-   }
-
-
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            this.props.setUsers(response.data.items);
+        })
+    }
 
 
     render() {
         return (
-            <div className={s.wrapper} >
-                <div >
+            <div className={s.wrapper}>
+                <div>
                     <Friends_header/>
                     <Friends_search/>
-                    <Friends_list profiles={this.props.profiles} followToggle={this.props.followToggle} setUsers={this.props.setUsers}/>
+                    <Friends_list profiles={this.props.profiles} followToggle={this.props.followToggle}
+                                  setUsers={this.props.setUsers}/>
                 </div>
                 <div>
                     <Peoples_category/>
@@ -39,9 +38,7 @@ class Friends extends React.Component{
     }
 
 
-
 }
-
 
 
 export default Friends;

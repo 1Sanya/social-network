@@ -1,7 +1,7 @@
 import React from "react";
 import s from './WallPost.module.css'
 
-let WallPost = (props)=> {
+let WallPost = (props) => {
     return (
         <div className={s.post}>
             <p>{props.name}</p>

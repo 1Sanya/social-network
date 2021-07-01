@@ -4,7 +4,6 @@ import {CallAC, followAC, OpenDialogAC, setUsersAC} from "../../Redux/friendsRed
 import Friends from "./Friends";
 
 
-
 let mapPropsToState = (state) => {
     return {
         profiles: state.friendsPage.profiles
@@ -12,7 +11,7 @@ let mapPropsToState = (state) => {
 }
 
 let mapDispatchToState = (dispatch) => {
-    return{
+    return {
         followToggle: (userId) => {
             dispatch(followAC(userId))
         },
@@ -28,6 +27,6 @@ let mapDispatchToState = (dispatch) => {
     }
 }
 
-let FriendsContainer = connect (mapPropsToState, mapDispatchToState) (Friends)
+let FriendsContainer = connect(mapPropsToState, mapDispatchToState)(Friends)
 
 export default FriendsContainer;
