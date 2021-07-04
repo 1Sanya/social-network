@@ -1,6 +1,6 @@
 import React from "react"
 
-let Dialogs_chats = (props) => {
+let Dialogs_chats = () => {
     return (
 
         <div>

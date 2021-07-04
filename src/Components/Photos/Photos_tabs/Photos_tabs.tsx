@@ -1,6 +1,6 @@
 import React from "react";
 
-let Photos_tabs = (props) => {
+let Photos_tabs = () => {
     return (
         <div>
 

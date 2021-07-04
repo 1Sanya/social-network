@@ -2,14 +2,18 @@ import React from "react";
 import WallPost from "./Wall_post/WallPost";
 import WallPosts from "./WallPosts";
 import {connect} from "react-redux";
+import {AppStateType} from "../../../../Redux/store";
+import {Dispatch} from "redux";
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state: AppStateType) => {
     return {
-        posts: state.profilePage.posts.map(d => <WallPost name={d.name} text={d.text} likes={d.likes}/>)
+        //todo fix
+
+        // posts: state.profilePage.posts.map(m => <WallPost name={m.name} text={m.text} likes={m.likes}/>)
     }
 }
 
-let mapDispatchToProps = () => {
+let mapDispatchToProps = (dispatch: Dispatch) => {
     return {}
 }
 

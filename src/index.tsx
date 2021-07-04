@@ -1,9 +1,8 @@
-import reportWebVitals from './reportWebVitals';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import store from "./Redux/store";
 import {Provider} from "react-redux";
+import {App} from "./App";
 
 ReactDOM.render(
     <Provider store={store}>
@@ -17,4 +16,3 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // TODO tsIgnore reportWebVitals
 // @ts-ignore
-reportWebVitals();

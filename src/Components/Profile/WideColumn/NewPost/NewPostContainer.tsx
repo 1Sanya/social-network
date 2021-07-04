@@ -1,21 +1,23 @@
 import React from "react";
-import {addPostAC, newPostTextAC} from "../../../../Redux/profileReducer";
+import {addPostAC, newPostTextAC} from "../../../../Redux/reducers/profileReducer";
 import NewPost from "./NewPost";
-import {connect} from "react-redux";
+import {connect, useDispatch} from "react-redux";
+import {AppStateType} from "../../../../Redux/store";
+import {Dispatch} from "redux";
+import {Profile, ProfileAction} from "../../../../Types/Profile";
 
-
-let mapStateToProps = (state) => {
+let mapStateToProps = (state:AppStateType) => {
     return {
         newPostText: state.profilePage.newPostText
     }
 }
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch: Dispatch<ProfileAction>) => {
     return {
         createPost: () => {
             dispatch(addPostAC());
         },
-        changeNewPostText: (text) => {
-            let action = newPostTextAC(text);
+        changeNewPostText: (newText: string) => {
+            let action = newPostTextAC(newText);
             dispatch(action);
 
         }

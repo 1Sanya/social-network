@@ -2,11 +2,11 @@ import React from "react";
 import {connect} from "react-redux";
 import Photos from "./Photos";
 
-let mapPropsToState = (state) => {
+let mapPropsToState = () => {
     return {}
 }
 
-let mapDispatchToState = (dispatch) => {
+let mapDispatchToState = () => {
 
 }
 

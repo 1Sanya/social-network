@@ -1,13 +1,14 @@
 import './App.css';
-import React from "react";
+import React, { FC } from "react";
 import Nav from "./Components/Nav/Nav";
 import Profile from "./Components/Profile/Profile";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Dialogs from "./Components/Dialogs/Dialogs";
 import FriendsContainer from "./Components/Friends/FriendsContainer";
 import PhotosContainer from "./Components/Photos/PhotosContainer";
+import DialogsContainer from './Components/Dialogs/DialogsContainer';
 
-function App(props) {
+export const App = () =>{
 
 
     return (
@@ -18,7 +19,7 @@ function App(props) {
                 <Nav/>
                 <Switch>
                     <Route path='/profile' render={() => <Profile/>}/>
-                    <Route path='/messenger' render={() => <Dialogs/>}/>
+                    <Route path='/messenger' render={() => <DialogsContainer/>}/>
                     <Route path='/friends' render={() => <FriendsContainer/>}/>
                     <Route path='/photos' render={() => <PhotosContainer/>}/>
                     <Route path='/' render={() => <Profile/>}/>
@@ -26,7 +27,7 @@ function App(props) {
 
             </div>
         </BrowserRouter>
+
     );
 }
 
-export default App;

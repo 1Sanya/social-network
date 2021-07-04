@@ -3,7 +3,7 @@ import s from './Friends_header.module.css'
 import Friends_tabs from "./Friends_tabs/Friends_tabs";
 import Find_friends_btn from "./Find_friends_btn/Find_friends_btn";
 
-let Friends_header = (props) => {
+let Friends_header = () => {
     return (
         <div className={s.wrapper}>
             <Friends_tabs/>

@@ -1,32 +1,34 @@
-import React from "react";
-import {connect} from "react-redux";
-import {CallAC, followAC, OpenDialogAC, setUsersAC} from "../../Redux/friendsReducer";
+import React, {Dispatch, FC} from "react"
+import {connect} from "react-redux"
+import {CallAC, followAC, OpenDialogAC, setUsersAC} from "../../Redux/reducers/friendsReducer"
+import {AppStateType} from "../../Redux/store"
+import {FriendsAction} from "../../Types/Friends";
 import Friends from "./Friends";
 
 
-let mapPropsToState = (state) => {
+let mapPropsToState = (state: AppStateType) => {
     return {
         profiles: state.friendsPage.profiles
     }
 }
 
-let mapDispatchToState = (dispatch) => {
+let mapDispatchToState = (dispatch: Dispatch<FriendsAction>) => {
     return {
-        followToggle: (userId) => {
+        followToggle: (userId:number) => {
             dispatch(followAC(userId))
         },
-        setUsers: (users) => {
+        setUsers: (users:any) => {
             dispatch(setUsersAC(users))
         },
-        call: (userId) => {
+        call: (userId:number) => {
             dispatch(CallAC(userId))
         },
-        message: (userId) => {
+        message: (userId:number) => {
             dispatch(OpenDialogAC(userId))
         }
     }
 }
 
-let FriendsContainer = connect(mapPropsToState, mapDispatchToState)(Friends)
 
-export default FriendsContainer;
+let FriendsContainer = connect(mapPropsToState, mapDispatchToState)(Friends)
+export default FriendsContainer

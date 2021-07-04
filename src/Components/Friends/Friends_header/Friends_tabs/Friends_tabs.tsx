@@ -2,7 +2,7 @@ import React from "react";
 import s from './Friends_tabs.module.css'
 import {Link} from "react-router-dom";
 
-let Friends_tabs = (props) => {
+let Friends_tabs = () => {
 
     let selectedToggle = () => {
 

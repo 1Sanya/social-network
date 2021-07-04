@@ -1,10 +1,11 @@
 import React from "react";
 import s from './WallPosts.module.css'
 
-let WallPosts = (props) => {
+let WallPosts = () => {
     return (
         <div className={s.posts_wr}>
-            {props.posts}
+            //TODO children hoc
+            {/*{props.posts}*/}
         </div>
     )
 }

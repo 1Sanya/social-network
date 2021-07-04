@@ -1,6 +1,6 @@
 import React from "react"
 
-let Dialogs_header = (props) => {
+let Dialogs_header = () => {
     return (
 
         <div>

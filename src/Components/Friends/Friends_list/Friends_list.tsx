@@ -1,15 +1,25 @@
-import React from "react";
+import React, {FC} from "react";
 import s from './Friends_list.module.css'
-import Friend_item from "./Friend_item/Friend_item";
+import {profilesType} from "../../../Types/Friends";
+import FriendItem from "./FriendItem/FriendItem";
 
-let Friends_list = (props) => {
+interface PropsType {
+    profiles:  Array<profilesType>,
+    followToggle: () => void,
+    setUsers: () => void,
+    children: React.ReactNode
 
-    let profiles = props.profiles.map(n => <Friend_item key={n.id} name={n.name} img={n.pic} id={n.id}
-                                                        isFollow={n.isFollow} followToggle={props.followToggle}/>)
+}
+
+
+let Friends_list:FC = (props) => {
+
+    // let profiles = props.profiles.map(n => <FriendItem key={n.id} name={n.name} img={n.pic} id={n.id}
+    //                                                    isFollow={n.isFollow} followToggle={props.followToggle}/>)
 
     return (
         <div className={s.wrapper}>
-            {profiles}
+            {/*{profiles}*/}
         </div>
     )
 }

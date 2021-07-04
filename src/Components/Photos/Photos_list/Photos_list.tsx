@@ -1,6 +1,6 @@
 import React from "react";
 
-let Photos_list = (props) => {
+let Photos_list = () => {
     return (
         <div>
 

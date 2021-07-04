@@ -1,6 +1,6 @@
 import React from "react"
 
-let Dialogs_footer = (props) => {
+let Dialogs_footer = () => {
     return (
 
         <div>

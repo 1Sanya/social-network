@@ -1,11 +1,15 @@
-import React from "react"
+import React, { FC } from "react"
 import s from './Dialogs.module.css'
 import Dialogs_header from "./Dialogs_header/Dialogs_header";
 import Dialogs_chats from "./DIalogs_chats/Dialogs_chats";
 import Dialogs_footer from "./DIalogs_footer/Dialogs_footer";
+import {idType} from "../../Redux/reducers/dialogsReducer";
 
+interface PropsType {
+    id: Array<idType>
+}
 
-let Dialogs = (props) => {
+export const Dialogs: FC<PropsType> = (props) => {
 
     return (
         <div className={s.page_wr}>

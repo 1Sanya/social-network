@@ -1,7 +1,7 @@
 import React from "react";
 import s from './May_be_friends.module.css'
 
-let May_be_friends = (props) => {
+let May_be_friends = () => {
     return (
         <div className={s.wrapper}>
 

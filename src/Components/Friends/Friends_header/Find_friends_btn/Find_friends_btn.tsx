@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Find_friends_btn.module.css'
 
-let Find_friends_btn = (props) => {
+let Find_friends_btn = () => {
 
     return (
         <div>

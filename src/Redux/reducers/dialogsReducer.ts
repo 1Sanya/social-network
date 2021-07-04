@@ -1,10 +1,10 @@
 import {AnyAction} from "redux";
 
-type idType = {
+export type idType = {
     id: number, name: string
 }
 
-type stateType = {
+export type stateType = {
     id: Array<idType>
 }
 
@@ -18,8 +18,8 @@ let initialState: stateType = {
     ]
 }
 
-const messengerReducer = (state = initialState, action: AnyAction) => {
+const dialogsReducer = (state = initialState, action: AnyAction) => {
     return state
 }
 
-export default messengerReducer;
+export default dialogsReducer;

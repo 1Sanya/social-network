@@ -3,7 +3,7 @@ import Photos_name from "./Photos_name/Photos_name";
 import Photos_tabs from "./Photos_tabs/Photos_tabs";
 import Photos_list from "./Photos_list/Photos_list";
 
-let Photos = (props) => {
+let Photos = () => {
     return (
         <div>
             Photos

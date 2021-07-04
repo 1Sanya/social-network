@@ -1,18 +1,10 @@
-import {combineReducers, createStore} from "redux";
-import profileReducer from "./profileReducer";
-import messengerReducer from "./messengerReducer";
-import friendsReducer from "./friendsReducer";
-import photosReducer from "./photosReducer";
+import {createStore} from "redux";
+import { rootReducer } from "./reducers";
+
+type RootReducerType = typeof rootReducer
+export type AppStateType = ReturnType<RootReducerType>
 
 
-let reducers = combineReducers({
-    profilePage: profileReducer,
-    messengerPage: messengerReducer,
-    friendsPage: friendsReducer,
-    photosPage: photosReducer
-});
+let store = createStore(rootReducer)
 
-
-let store = createStore(reducers);
-
-export default store;
+export default store

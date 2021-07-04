@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Peoples_category.module.css'
 
-let Peoples_category = (props) => {
+let Peoples_category = () => {
     return (
         <div className={s.wrapper}>
 
