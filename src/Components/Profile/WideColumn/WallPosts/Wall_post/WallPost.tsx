@@ -1,14 +1,17 @@
-import React from "react";
-import s from './WallPost.module.css'
+import React, {FC} from "react";
 
-let WallPost = () => {
+import s from './WallPost.module.css'
+import {WallSinglePostsT} from "../../../../../Types/ProfileT";
+
+let WallPost: FC<WallSinglePostsT> = (props) => {
+
     return (
 
-        //todo props
+
         <div className={s.post}>
-            {/*<p>{props.name}</p>*/}
-            {/*<p>{props.text}</p>*/}
-            {/*<p>{props.likes}</p>*/}
+            <p>{props.name}</p>
+            <p>{props.text}</p>
+            <p>{props.likes}</p>
         </div>
     )
 }

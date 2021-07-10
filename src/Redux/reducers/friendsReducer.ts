@@ -1,20 +1,16 @@
-import {
-    CallAction,
-    FollowToggleAction,
-    FriendsAction,
-    FrinedsActionTypes,
-    FrinedsState,
-    OpenDialogAction, SetUsersAction
-} from "../../Types/Friends";
+import {FriendsACT, FriendsState, FrinedsAT} from "../../Types/FriendsT";
 
-let initialState: FrinedsState = {
-    profiles: []
+let initialState: FriendsState = {
+    profiles: [],
+    error: null,
+    loading: false
+
 }
 
-const friendsReducer = (state = initialState, action: FriendsAction ): FrinedsState => {
+const friendsReducer = (state = initialState, action: FriendsACT): FriendsState => {
 
     switch (action.type) {
-        case FrinedsActionTypes.FOLLOW_TOGGLE:
+        case FrinedsAT.FOLLOW_TOGGLE:
             return {
                 ...state,
                 profiles: state.profiles.map(n => {
@@ -24,20 +20,20 @@ const friendsReducer = (state = initialState, action: FriendsAction ): FrinedsSt
                     return n;
                 })
             }
-        case FrinedsActionTypes.SET_USERS: {
-            return {
-                ...state, profiles: action.users
-            }
-        }
-        case FrinedsActionTypes.OPED_DIALOG:
+        case FrinedsAT.OPED_DIALOG:
             return {
                 ...state
             }
-        case FrinedsActionTypes.CALL:
+        case FrinedsAT.CALL:
             return {
                 ...state
             }
-
+        case FrinedsAT.FETCH_USERS:
+            return {loading: true, error: null, profiles: []}
+        case FrinedsAT.FETCH_USERS_SUCCESS:
+            return {loading: false, error: null, profiles: action.payload}
+        case FrinedsAT.FETCH_USERS_ERROR:
+            return {loading: false, error: action.payload, profiles: []}
         default:
             return state
     }
@@ -45,68 +41,7 @@ const friendsReducer = (state = initialState, action: FriendsAction ): FrinedsSt
 }
 
 
-
-
-export const followAC = (userId: number):FollowToggleAction => ({type: FrinedsActionTypes.FOLLOW_TOGGLE, userId: userId})
-
-
-export const OpenDialogAC = (userId: number):OpenDialogAction => ({type: FrinedsActionTypes.OPED_DIALOG, userId: userId})
-
-
-export const CallAC = (userId: number):CallAction => ({type: FrinedsActionTypes.CALL, userId: userId})
-
-
-export const setUsersAC = (users: any):SetUsersAction => ({type: FrinedsActionTypes.SET_USERS, users: users})
-
-
-
-
-
 export default friendsReducer
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // import {AnyAction} from "redux"

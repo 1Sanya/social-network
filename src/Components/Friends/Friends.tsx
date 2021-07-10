@@ -8,23 +8,18 @@ import Peoples_category from "./Peoples_category/Peoples_category";
 
 import s from './Friends.module.css'
 
-import {profilesType} from "../../Types/Friends";
+import {FriendsProps} from "../../Types/FriendsT";
 
-interface PropsType {
-    profiles:  Array<profilesType>,
-    // followToggle: () => void,
-    // setUsers: () => void
-}
 
-const Friends:FC<PropsType> = (props) => {
-
+const Friends: FC<FriendsProps> = (props) => {
     return (
         <div className={s.wrapper}>
+
             <div>
                 <Friends_header/>
                 <Friends_search/>
-                {/*<Friends_list profiles={props.profiles} followToggle={props.followToggle}
-                              setUsers={props.setUsers}/>*/}
+                <Friends_list profiles={props.profiles} followToggle={props.followToggle}
+                              call={props.call} message={props.message}/>
             </div>
             <div>
                 <Peoples_category/>

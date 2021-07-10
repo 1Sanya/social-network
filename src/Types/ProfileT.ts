@@ -15,13 +15,17 @@ export interface ChangeNewPostTextAction {
 }
 
 
-interface postsType {
-    name: string, text: string, likes: number
-
-}
-
-export interface Profile {
-    posts: Array<postsType>,
+export interface ProfileT {
+    posts: Array<WallSinglePostsT>,
     newPostText: string
 }
 
+export interface WallPostsT {
+    posts: Array<WallSinglePostsT>
+}
+
+export interface WallSinglePostsT {
+    name: string
+    text: string
+    likes: number
+}

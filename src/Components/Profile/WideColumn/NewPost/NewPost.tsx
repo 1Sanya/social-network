@@ -1,24 +1,22 @@
-import React, {FC, Ref} from "react";
+import React, {FC} from "react";
 import s from './NewPost.module.css'
 
 type PropsType = {
     createPost: () => void
-    changeNewPostText: (text:string) => void
+    changeNewPostText: (text: string) => void
     newPostText: string
 }
 
 
-
-export const NewPost:FC<PropsType> = (props) => {
-    let inputRef:React.RefObject<HTMLInputElement> = React.createRef();
+export const NewPost: FC<PropsType> = (props) => {
+    let inputRef: React.RefObject<HTMLInputElement> = React.createRef();
 
 
     let onAddPost = () => {
         props.createPost();
 
     }
-    let onPostChange = ():void => {
-        //TODO ts-ignore: possible null
+    let onPostChange = (): void => {
 
         // @ts-ignore input is possible null
 

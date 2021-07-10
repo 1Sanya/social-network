@@ -4,7 +4,7 @@ import Dialogs from "./Dialogs";
 import {AppStateType} from "../../Redux/store";
 import {Dispatch} from "redux";
 
-let mapPropsToState = (state:AppStateType) => {
+let mapPropsToState = (state: AppStateType) => {
     return {
         id: state.dialogsPage.id
     }

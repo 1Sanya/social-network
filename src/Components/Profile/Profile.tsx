@@ -18,10 +18,8 @@ let Profile = () => {
 
         <div className={s.columns}>
             <div className={s.narrow_column}>
-                <div className={s.page_block}><Profile_ava
-                    />
+                <div className={s.page_block}><Profile_ava/>
 
-                    //todo profile ava
                     {/*link='https://sun2-3.userapi.com/s/v1/ig2/qM7zDX1v2vdlh0h3QF_9llzCPdn4dwrmHsgWVAyq3tZ5aQlAXceNLBCSNTa-rIXYU-nJOvIfJldniMXVjvdLCdmB.jpg?size=200x0&quality=96&crop=0,0,1620,2160&ava=1'*/}
                 </div>
                 <div className={s.page_block}><Gifts/></div>

@@ -1,6 +1,12 @@
-import {addPostAction, ChangeNewPostTextAction, Profile, ProfileAction, ProfileActionTypes} from "../../Types/Profile";
+import {
+    addPostAction,
+    ChangeNewPostTextAction,
+    ProfileAction,
+    ProfileActionTypes,
+    ProfileT
+} from "../../Types/ProfileT";
 
-let initialState: Profile = {
+let initialState: ProfileT = {
 
     posts: [
         {name: 'Sanya', text: 'Bilo ne slojno, eto po lubvi', likes: 3},
@@ -9,7 +15,7 @@ let initialState: Profile = {
     newPostText: 'snus'
 };
 
-const profileReducer = (state = initialState, action: ProfileAction): Profile => {
+const profileReducer = (state = initialState, action: ProfileAction): ProfileT => {
 
     switch (action.type) {
         case ProfileActionTypes.ADD_POST: {
@@ -31,10 +37,10 @@ const profileReducer = (state = initialState, action: ProfileAction): Profile =>
     }
 }
 
-export const addPostAC = ():addPostAction => ({type: ProfileActionTypes.ADD_POST})
+export const addPostAC = (): addPostAction => ({type: ProfileActionTypes.ADD_POST})
 
 
-export const newPostTextAC = (newText:string):ChangeNewPostTextAction =>
+export const newPostTextAC = (newText: string): ChangeNewPostTextAction =>
     ({type: ProfileActionTypes.UPDATE_NEW_POST_TEXT, newText: newText})
 
 export default profileReducer;

@@ -1,14 +1,13 @@
 import './App.css';
-import React, { FC } from "react";
+import React from "react";
 import Nav from "./Components/Nav/Nav";
 import Profile from "./Components/Profile/Profile";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Dialogs from "./Components/Dialogs/Dialogs";
 import FriendsContainer from "./Components/Friends/FriendsContainer";
 import PhotosContainer from "./Components/Photos/PhotosContainer";
 import DialogsContainer from './Components/Dialogs/DialogsContainer';
 
-export const App = () =>{
+export const App = () => {
 
 
     return (

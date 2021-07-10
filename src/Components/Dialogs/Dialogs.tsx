@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, {FC} from "react"
 import s from './Dialogs.module.css'
 import Dialogs_header from "./Dialogs_header/Dialogs_header";
 import Dialogs_chats from "./DIalogs_chats/Dialogs_chats";
