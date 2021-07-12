@@ -1,13 +1,14 @@
 import {Dispatch} from "redux";
 import {CallACT, FollowToggleACT, FriendsACT, FrinedsAT, OpenDialogACT} from "../../Types/FriendsT";
 import axios from "axios";
+import {instance} from "../../api";
 
 
 export const fetchUsers = () => {
     return async (dispatch: Dispatch<FriendsACT>) => {
         try {
             dispatch({type: FrinedsAT.FETCH_USERS})
-            const response = await axios.get('https://social-network.samuraijs.com/api/1.0/users')
+            const response = await instance.get('https://social-network.samuraijs.com/api/1.0/users')
             dispatch({type: FrinedsAT.FETCH_USERS_SUCCESS, payload: response.data.items})
         } catch (e) {
             dispatch({
