@@ -1,4 +1,4 @@
-import {FriendsACT, FriendsState, FrinedsAT} from "../../Types/FriendsT";
+import {FriendsACT, FriendsState, FriendsAT} from "../../Types/FriendsT";
 
 let initialState: FriendsState = {
     profiles: [],
@@ -10,7 +10,7 @@ let initialState: FriendsState = {
 const friendsReducer = (state = initialState, action: FriendsACT): FriendsState => {
 
     switch (action.type) {
-        case FrinedsAT.FOLLOW_TOGGLE:
+        case FriendsAT.FOLLOW_TOGGLE:
             return {
                 ...state,
                 profiles: state.profiles.map(n => {
@@ -20,19 +20,19 @@ const friendsReducer = (state = initialState, action: FriendsACT): FriendsState 
                     return n;
                 })
             }
-        case FrinedsAT.OPED_DIALOG:
+        case FriendsAT.OPED_DIALOG:
             return {
                 ...state
             }
-        case FrinedsAT.CALL:
+        case FriendsAT.CALL:
             return {
                 ...state
             }
-        case FrinedsAT.FETCH_USERS:
+        case FriendsAT.FETCH_USERS:
             return {loading: true, error: null, profiles: []}
-        case FrinedsAT.FETCH_USERS_SUCCESS:
+        case FriendsAT.FETCH_USERS_SUCCESS:
             return {loading: false, error: null, profiles: action.payload}
-        case FrinedsAT.FETCH_USERS_ERROR:
+        case FriendsAT.FETCH_USERS_ERROR:
             return {loading: false, error: action.payload, profiles: []}
         default:
             return state

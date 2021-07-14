@@ -13,7 +13,7 @@ export interface FriendsProps {
 }
 
 
-export enum FrinedsAT {
+export enum FriendsAT {
     FOLLOW_TOGGLE = 'FOLLOW_TOGGLE',
     OPED_DIALOG = 'OPEN-DIALOG',
     CALL = 'CALL',
@@ -24,38 +24,38 @@ export enum FrinedsAT {
 }
 
 export interface FollowToggleACT {
-    type: FrinedsAT.FOLLOW_TOGGLE
+    type: FriendsAT.FOLLOW_TOGGLE
     userId: number
 }
 
 export interface OpenDialogACT {
-    type: FrinedsAT.OPED_DIALOG
+    type: FriendsAT.OPED_DIALOG
     userId: number
 }
 
 export interface CallACT {
-    type: FrinedsAT.CALL
+    type: FriendsAT.CALL
     userId: number
 }
 
 export interface SetUsersACT {
-    type: FrinedsAT.SET_USERS
+    type: FriendsAT.SET_USERS
     users: Array<any>
 }
 
 export interface FetchUsers {
-    type: FrinedsAT.FETCH_USERS
+    type: FriendsAT.FETCH_USERS
 
 }
 
 export interface FetchUsersSuccess {
-    type: FrinedsAT.FETCH_USERS_SUCCESS
+    type: FriendsAT.FETCH_USERS_SUCCESS
     payload: any[]
 
 }
 
 export interface FetchUsersError {
-    type: FrinedsAT.FETCH_USERS_ERROR
+    type: FriendsAT.FETCH_USERS_ERROR
     payload: string
 
 }
