@@ -22,7 +22,7 @@ const profileReducer = (state = initialState, action: ProfileAction): ProfileT =
             return {
 
                 ...state,
-                posts: [...state.posts, {name: 'Sanya', text: state.newPostText, likes: 0}],
+                posts: [{name: 'Sanya', text: state.newPostText, likes: 0}, ...state.posts ],
                 newPostText: ''
             }
 

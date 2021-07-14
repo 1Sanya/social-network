@@ -23,12 +23,13 @@ let Photos_list = () => {
         return <div>Ошибка-c</div>
     }
 
+
+
     return (
 
             <Masonry
                 breakpointCols={3}
-                className={s.wrapper}
-                columnClassName={s.column}>
+                className={s.wrapper}>
                 {photos.map(n => <Photos_image imageUrl={n.urls.regular} />)}
             </Masonry>
 
