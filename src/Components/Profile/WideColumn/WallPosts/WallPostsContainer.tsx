@@ -1,20 +1,15 @@
-import React from "react";
-import WallPosts from "./WallPosts";
-import {connect} from "react-redux";
-import {AppStateType} from "../../../../Redux/store";
-import {Dispatch} from "redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import WallPosts from './WallPosts';
+import { AppStateType } from '../../../../Redux/store';
 
+const mapStateToProps = (state: AppStateType) => ({
 
-let mapStateToProps = (state: AppStateType) => {
-    return {
+  posts: state.profilePage.posts,
+});
 
-        posts: state.profilePage.posts
-    }
-}
-
-let mapDispatchToProps = (dispatch: Dispatch<any>) => {
-    return {}
-}
+const mapDispatchToProps = (dispatch: Dispatch<any>) => ({});
 
 const WallPostsContainer = connect(mapStateToProps, mapDispatchToProps)(WallPosts);
-export default WallPostsContainer
+export default WallPostsContainer;

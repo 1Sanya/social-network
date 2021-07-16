@@ -9,7 +9,6 @@ export enum PhotosAT {
     FETCH_PHOTOS_SUCCESS = 'FETCH_PHOTOS_SUCCESS',
     FETCH_PHOTOS_ERROR = 'FETCH_PHOTOS_ERROR',
 
-
 }
 
 export type PhotosACT =

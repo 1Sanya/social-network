@@ -1,12 +1,8 @@
-import React from "react"
+import React from 'react';
 
-let Dialogs_chats = () => {
-    return (
+const Dialogs_chats = () => (
 
-        <div>
+  <div />
+);
 
-        </div>
-    )
-}
-
-export default Dialogs_chats
+export default Dialogs_chats;

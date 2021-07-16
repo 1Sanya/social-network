@@ -1,12 +1,8 @@
-import React from "react"
+import React from 'react';
 
-let Dialogs_footer = () => {
-    return (
+const Dialogs_footer = () => (
 
-        <div>
+  <div />
+);
 
-        </div>
-    )
-}
-
-export default Dialogs_footer
+export default Dialogs_footer;

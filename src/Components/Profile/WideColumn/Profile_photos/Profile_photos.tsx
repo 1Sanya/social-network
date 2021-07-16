@@ -1,12 +1,8 @@
-import React from "react";
-import s from './Profile_photos.module.css'
+import React from 'react';
+import s from './Profile_photos.module.css';
 
-let Profile_photos = () => {
-    return (
-        <div className={s.photosWr}>
+const Profile_photos = () => (
+  <div className={s.photosWr} />
+);
 
-        </div>
-    )
-}
-
-export default Profile_photos
+export default Profile_photos;

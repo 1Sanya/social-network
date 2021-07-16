@@ -1,5 +1,5 @@
-import React, {FC} from "react";
-import s from './NewPost.module.css'
+import React, { FC } from 'react';
+import s from './NewPost.module.css';
 
 type PropsType = {
     createPost: () => void
@@ -7,29 +7,24 @@ type PropsType = {
     newPostText: string
 }
 
-
 export const NewPost: FC<PropsType> = (props) => {
-    let inputRef: React.RefObject<HTMLInputElement> = React.createRef();
+  const inputRef: React.RefObject<HTMLInputElement> = React.createRef();
 
+  const onAddPost = () => {
+    props.createPost();
+  };
+  const onPostChange = (): void => {
+    // @ts-ignore input is possible null
 
-    let onAddPost = () => {
-        props.createPost();
+    const text: string | null = inputRef.current.value;
+    props.changeNewPostText(text);
+  };
+  return (
+    <div className={s.new_post_wr}>
+      <input onChange={onPostChange} ref={inputRef} type="text" value={props.newPostText} />
+      <button onClick={onAddPost}>go</button>
+    </div>
+  );
+};
 
-    }
-    let onPostChange = (): void => {
-
-        // @ts-ignore input is possible null
-
-        let text: string | null = inputRef.current.value;
-        props.changeNewPostText(text);
-
-    }
-    return (
-        <div className={s.new_post_wr}>
-            <input onChange={onPostChange} ref={inputRef} type="text" value={props.newPostText}/>
-            <button onClick={onAddPost}>go</button>
-        </div>
-    )
-}
-
-export default NewPost
+export default NewPost;

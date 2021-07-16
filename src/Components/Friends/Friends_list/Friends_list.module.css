@@ -5,3 +5,11 @@
 
     background-color: #333336;
 }
+
+.selectedPage {
+    font-weight: 700;
+}
+
+.ne {
+    font-style: italic;
+}

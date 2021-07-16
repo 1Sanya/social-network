@@ -1,17 +1,14 @@
-import React from "react";
-import {connect} from "react-redux";
-import Nav from "./Nav";
+import React from 'react';
+import { connect } from 'react-redux';
+import Nav from './Nav';
 
-let mapPropsToState = () => {
-}
+const mapPropsToState = () => {
+};
 
-let mapDispatchToState = () => {
+const mapDispatchToState = () => {
 
-}
+};
 
-let NavContainer = connect(mapPropsToState, mapDispatchToState)(Nav)
+const NavContainer = connect(mapPropsToState, mapDispatchToState)(Nav);
 
 export default NavContainer;
-
-
-

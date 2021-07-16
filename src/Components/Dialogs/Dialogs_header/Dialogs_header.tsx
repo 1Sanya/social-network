@@ -1,12 +1,8 @@
-import React from "react"
+import React from 'react';
 
-let Dialogs_header = () => {
-    return (
+const Dialogs_header = () => (
 
-        <div>
+  <div />
+);
 
-        </div>
-    )
-}
-
-export default Dialogs_header
+export default Dialogs_header;

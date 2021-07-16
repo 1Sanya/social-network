@@ -1,136 +1,51 @@
-import {FriendsACT, FriendsState, FriendsAT} from "../../Types/FriendsT";
+import { FriendsACT, FriendsAT, FriendsState } from '../../Types/FriendsT';
 
-let initialState: FriendsState = {
-    profiles: [],
-    error: null,
-    loading: false
+const initialState: FriendsState = {
+  pageArray: [],
+  profiles: [],
+  error: null,
+  loading: false,
+  totalUserCount: 60,
+  pageSize: 10,
+  currentPage: 2,
 
-}
+};
 
 const friendsReducer = (state = initialState, action: FriendsACT): FriendsState => {
+  switch (action.type) {
+    case FriendsAT.FOLLOW_TOGGLE:
+      return {
+        ...state,
+        profiles: state.profiles.map((n) => {
+          if (action.userId === n.id) {
+            return { ...n, isFollow: !n.isFollow };
+          }
+          return n;
+        }),
+      };
+    case FriendsAT.OPED_DIALOG:
+      return {
+        ...state,
+      };
+    case FriendsAT.CALL:
+      return {
+        ...state,
+      };
+    case FriendsAT.FETCH_USERS:
+      return {
+        ...state, loading: true, error: null, profiles: [],
+      };
+    case FriendsAT.FETCH_USERS_SUCCESS:
+      return {
+        ...state, loading: false, error: null, profiles: action.payload,
+      };
+    case FriendsAT.FETCH_USERS_ERROR:
+      return {
+        ...state, loading: false, error: action.payload, profiles: [],
+      };
+    default:
+      return state;
+  }
+};
 
-    switch (action.type) {
-        case FriendsAT.FOLLOW_TOGGLE:
-            return {
-                ...state,
-                profiles: state.profiles.map(n => {
-                    if (action.userId === n.id) {
-                        return {...n, isFollow: !n.isFollow}
-                    }
-                    return n;
-                })
-            }
-        case FriendsAT.OPED_DIALOG:
-            return {
-                ...state
-            }
-        case FriendsAT.CALL:
-            return {
-                ...state
-            }
-        case FriendsAT.FETCH_USERS:
-            return {loading: true, error: null, profiles: []}
-        case FriendsAT.FETCH_USERS_SUCCESS:
-            return {loading: false, error: null, profiles: action.payload}
-        case FriendsAT.FETCH_USERS_ERROR:
-            return {loading: false, error: action.payload, profiles: []}
-        default:
-            return state
-    }
-
-}
-
-
-export default friendsReducer
-
-
-// import {AnyAction} from "redux"
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// type profilesType = {
-//     name: string, id: number
-// }
-//
-// type stateType = {
-//     profiles:  Array<profilesType>
-// }
-//
-// let initialState: stateType = {
-//     profiles: [
-//         {name: 'string', id: 3}
-//     ]
-// }
-//
-//
-//
-//
-//
-//
-//
-//
-// const friendsReducer = (state = initialState, action: AnyAction) => {
-//
-//     switch (action.type) {
-//         // case FOLLOW_TOGGLE:
-//         //     return {
-//         //         ...state,
-//         //         profiles: state.profiles.map(n => {
-//         //             if (action.userId === n.id) {
-//         //                 return {...n, isFollow: !n.isFollow}
-//         //             }
-//         //             return n;
-//         //         })
-//         //     }
-//         // case SET_USERS: {
-//         //     return {
-//         //         ...state, profiles: action.users
-//         //     }
-//         // }
-//         case OPED_DIALOG:
-//             return {
-//                 state
-//             }
-//         case CALL:
-//             return {
-//                 state
-//             }
-//
-//         default:
-//             return state;
-//     }
-// }
-//
-// type followAT = {
-//     type: typeof FOLLOW_TOGGLE,
-//     userId: number
-// }
-// export const followAC = (userId: number):followAT => ({type: FOLLOW_TOGGLE, userId: userId})
-//
-// type OpenDialogAT = {
-//     type: typeof OPED_DIALOG,
-//     userId:number
-// }
-// export const OpenDialogAC = (userId: number):OpenDialogAT => ({type: OPED_DIALOG, userId: userId})
-//
-// type CallAT = {
-//     type: typeof OPED_DIALOG,
-//     userId: number
-// }
-// export const CallAC = (userId: number):CallAT => ({type: CALL, userId: userId})
-//
-// type setUsersAT = {
-//     type: typeof SET_USERS,
-//     users: any
-// }
-// export const setUsersAC = (users: any):setUsersAT => ({type: SET_USERS, users: users})
-//
-//
-// export default friendsReducer;
+export default friendsReducer;

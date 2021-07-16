@@ -1,20 +1,21 @@
-import React from "react";
-import s from './Friends_tabs.module.css'
-import {Link} from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import s from './Friends_tabs.module.css';
 
-let Friends_tabs = () => {
+const Friends_tabs = () => {
+  const selectedToggle = () => {
 
-    let selectedToggle = () => {
+  };
 
-    }
-
-    return (
-        <div className={s.wrapper}>
-            <Link className={`${s.link} ${s.selected}`} onClick={selectedToggle} to='/friends?section=all'>All friends
-                107</Link>
-            <Link className={s.link} onClick={selectedToggle} to='/friends?section=online'>Friends online 28</Link>
-        </div>
-    )
-}
+  return (
+    <div className={s.wrapper}>
+      <Link className={`${s.link} ${s.selected}`} onClick={selectedToggle} to="/friends?section=all">
+        All friends
+        107
+      </Link>
+      <Link className={s.link} onClick={selectedToggle} to="/friends?section=online">Friends online 28</Link>
+    </div>
+  );
+};
 
 export default Friends_tabs;

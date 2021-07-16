@@ -2,16 +2,20 @@ export type FriendsState = {
     profiles: Array<FriendsProfileT>
     error: null | string
     loading: boolean
-
+    totalUserCount: number
+    pageSize: number
+    currentPage: number
+    pageArray: Array<number>
 }
 
-export interface FriendsProps {
-    profiles: Array<FriendsProfileT>
+export type FriendsProps = {
     followToggle: (userId: number) => void
-    call: (userId:number) => void
-    message: (userId:number) => void
+    call: (userId: number) => void
+    message: (userId: number) => void
+    totalUserCount: number
+    pageSize: number
+    currentPage: number
 }
-
 
 export enum FriendsAT {
     FOLLOW_TOGGLE = 'FOLLOW_TOGGLE',
@@ -20,7 +24,7 @@ export enum FriendsAT {
     SET_USERS = 'SET_USERS',
     FETCH_USERS = 'FETCH_USERS',
     FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS',
-    FETCH_USERS_ERROR = 'FETCH_USERS_ERROR'
+    FETCH_USERS_ERROR = 'FETCH_USERS_ERROR',
 }
 
 export interface FollowToggleACT {
@@ -43,18 +47,18 @@ export interface SetUsersACT {
     users: Array<any>
 }
 
-export interface FetchUsers {
+export interface FetchUsersACT {
     type: FriendsAT.FETCH_USERS
 
 }
 
-export interface FetchUsersSuccess {
+export interface FetchUsersSuccessACT {
     type: FriendsAT.FETCH_USERS_SUCCESS
     payload: any[]
 
 }
 
-export interface FetchUsersError {
+export interface FetchUsersErrorACT {
     type: FriendsAT.FETCH_USERS_ERROR
     payload: string
 
@@ -64,10 +68,9 @@ export type FriendsACT =
     FollowToggleACT
     | OpenDialogACT
     | CallACT
-    | FetchUsers
-    | FetchUsersSuccess
-    | FetchUsersError
-
+    | FetchUsersACT
+    | FetchUsersSuccessACT
+    | FetchUsersErrorACT
 
 export type FriendsProfileT = {
     name: string
@@ -86,12 +89,7 @@ export interface FriendsItemProps {
     name: string
     id: number
     key: number
-    isFollow:boolean
+    isFollow: boolean
     img: string | null
 
-
 }
-
-
-
-

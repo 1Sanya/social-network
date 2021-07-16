@@ -1,31 +1,25 @@
-import React from "react";
-import {addPostAC, newPostTextAC} from "../../../../Redux/reducers/profileReducer";
-import NewPost from "./NewPost";
-import {connect} from "react-redux";
-import {AppStateType} from "../../../../Redux/store";
-import {Dispatch} from "redux";
-import {ProfileAction} from "../../../../Types/ProfileT";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import { addPostAC, newPostTextAC } from '../../../../Redux/reducers/profileReducer';
+import NewPost from './NewPost';
+import { AppStateType } from '../../../../Redux/store';
+import { ProfileAction } from '../../../../Types/ProfileT';
 
-let mapStateToProps = (state: AppStateType) => {
-    return {
-        newPostText: state.profilePage.newPostText
-    }
-}
-let mapDispatchToProps = (dispatch: Dispatch<ProfileAction>) => {
-    return {
-        createPost: () => {
-            dispatch(addPostAC());
-        },
-        changeNewPostText: (newText: string) => {
-            let action = newPostTextAC(newText);
-            dispatch(action);
+const mapStateToProps = (state: AppStateType) => ({
+  newPostText: state.profilePage.newPostText,
+});
+const mapDispatchToProps = (dispatch: Dispatch<ProfileAction>) => ({
+  createPost: () => {
+    dispatch(addPostAC());
+  },
+  changeNewPostText: (newText: string) => {
+    const action = newPostTextAC(newText);
+    dispatch(action);
+  },
 
-        }
-
-    }
-}
-
+});
 
 const NewPostContainer = connect(mapStateToProps, mapDispatchToProps)(NewPost);
 
-export default NewPostContainer
+export default NewPostContainer;

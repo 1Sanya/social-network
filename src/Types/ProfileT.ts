@@ -14,7 +14,6 @@ export interface ChangeNewPostTextAction {
     newText: string
 }
 
-
 export interface ProfileT {
     posts: Array<WallSinglePostsT>,
     newPostText: string

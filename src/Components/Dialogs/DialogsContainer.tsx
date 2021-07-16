@@ -1,21 +1,17 @@
-import React from "react";
-import {connect} from "react-redux";
-import Dialogs from "./Dialogs";
-import {AppStateType} from "../../Redux/store";
-import {Dispatch} from "redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import Dialogs from './Dialogs';
+import { AppStateType } from '../../Redux/store';
 
-let mapPropsToState = (state: AppStateType) => {
-    return {
-        id: state.dialogsPage.id
-    }
+const mapPropsToState = (state: AppStateType) => ({
+  id: state.dialogsPage.id,
+});
 
-}
+const mapDispatchToState = (dispatch: Dispatch) => {
 
-let mapDispatchToState = (dispatch: Dispatch) => {
+};
 
-}
-
-let DialogsContainer = connect(mapPropsToState, mapDispatchToState)(Dialogs)
+const DialogsContainer = connect(mapPropsToState, mapDispatchToState)(Dialogs);
 
 export default DialogsContainer;
-
