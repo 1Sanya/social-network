@@ -1,7 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const Photos_name = () => (
-  <div />
-);
+const Photos_name = () => <div />
 
-export default Photos_name;
+export default Photos_name

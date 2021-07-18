@@ -1,8 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const Dialogs_footer = () => (
+const Dialogs_footer = () => <div />
 
-  <div />
-);
-
-export default Dialogs_footer;
+export default Dialogs_footer

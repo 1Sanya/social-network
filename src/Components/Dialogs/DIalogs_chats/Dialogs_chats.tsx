@@ -1,8 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const Dialogs_chats = () => (
+const Dialogs_chats = () => <div />
 
-  <div />
-);
-
-export default Dialogs_chats;
+export default Dialogs_chats

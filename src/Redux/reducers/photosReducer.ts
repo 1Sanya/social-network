@@ -1,23 +1,26 @@
-import { PhotosACT, PhotosAT, PhotosState } from '../../Types/PhotosT';
+import { PhotosACT, PhotosAT, PhotosState } from '../../Types/PhotosT'
 
 const initialState: PhotosState = {
   photos: [],
   error: null,
   loading: false,
-};
+}
 
-const photosReducer = (state = initialState, action: PhotosACT): PhotosState => {
+const photosReducer = (
+  state = initialState,
+  action: PhotosACT
+): PhotosState => {
   switch (action.type) {
     case PhotosAT.FETCH_PHOTOS:
-      return { loading: true, error: null, photos: [] };
+      return { loading: true, error: null, photos: [] }
     case PhotosAT.FETCH_PHOTOS_SUCCESS:
-      return { loading: false, error: null, photos: action.payload };
+      return { loading: false, error: null, photos: action.payload }
     case PhotosAT.FETCH_PHOTOS_ERROR:
-      return { loading: false, error: action.payload, photos: [] };
+      return { loading: false, error: action.payload, photos: [] }
 
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default photosReducer;
+export default photosReducer
