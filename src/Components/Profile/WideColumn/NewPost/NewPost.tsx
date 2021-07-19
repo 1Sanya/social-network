@@ -29,7 +29,8 @@ export const NewPost: FC = () => {
       <button
         onClick={() => {
           if (newPostText) dispatch(AddPostAC())
-        }}>
+        }}
+      >
         Post
       </button>
     </div>
