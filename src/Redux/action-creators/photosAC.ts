@@ -8,7 +8,10 @@ export const fetchPhotos = () => async (dispatch: Dispatch<PhotosACT>) => {
     const response = await axios.get(
       'https://api.unsplash.com/photos/?client_id=vS6AZI4JcBMALc-SUrXs5qM1Fbov8SM-E4hxQDN6Xjc'
     )
-    dispatch({ type: PhotosAT.FETCH_PHOTOS_SUCCESS, payload: response.data })
+    dispatch({
+      type: PhotosAT.FETCH_PHOTOS_SUCCESS,
+      payload: response.data,
+    })
   } catch (e) {
     dispatch({
       type: PhotosAT.FETCH_PHOTOS_ERROR,

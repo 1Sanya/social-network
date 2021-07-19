@@ -8,8 +8,13 @@ import { useTypedSelector } from '../../../hooks/hooks'
 import { AppStateType } from '../../../Redux/store'
 
 const Friends_list: FC<FriendsProps> = (props: FriendsProps) => {
-  const { pageArray, profiles, loading, error, totalUserCount, pageSize } =
-    useTypedSelector((state) => state.friendsPage)
+  const {
+    pageArray,
+    profiles,
+    loading,
+    error, totalUserCount,
+    pageSize
+  } = useTypedSelector((state) => state.friendsPage)
   const dispatch = useDispatch()
 
   let { currentPage } = useTypedSelector(
@@ -37,8 +42,6 @@ const Friends_list: FC<FriendsProps> = (props: FriendsProps) => {
 
   return (
     <div className={s.wrapper}>
-      {/* {pageArray.map(p => <span onClick={() => setCurrentPage(p)} className={(currentPage === p)? s.selectedPage: s.ne} >{p}</span>)} */}
-
       {profiles.map((p) => (
         <FriendItem
           key={p.id}

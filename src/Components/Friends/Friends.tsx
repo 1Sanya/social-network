@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-use-before-define
 import React, { FC } from 'react'
 import Friends_list from './Friends_list/Friends_list'
 import Friends_search from './Friends_search/Friends_search'

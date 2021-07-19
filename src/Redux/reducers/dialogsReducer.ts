@@ -11,11 +11,26 @@ export type stateType = {
 
 const initialState: stateType = {
   id: [
-    { id: 1, name: 'sanya' },
-    { id: 2, name: 'Sofia' },
-    { id: 3, name: 'zed' },
-    { id: 4, name: 'yi' },
-    { id: 5, name: 'tom' },
+    {
+      id: 1,
+      name: 'sanya',
+    },
+    {
+      id: 2,
+      name: 'Sofia',
+    },
+    {
+      id: 3,
+      name: 'zed',
+    },
+    {
+      id: 4,
+      name: 'yi',
+    },
+    {
+      id: 5,
+      name: 'tom',
+    },
   ],
 }
 

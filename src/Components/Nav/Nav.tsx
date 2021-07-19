@@ -10,25 +10,29 @@ const Nav = () => (
     <div className={s.li_wr}>
       <NavLink className={s.li} to="/profile">
         {' '}
-        <CgProfile color="#777" size="1.4em" /> My profile
+        <CgProfile color="#777" size="1.4em" />
+        My profile
       </NavLink>
     </div>
     <div className={s.li_wr}>
       <NavLink className={s.li} to="/messenger">
         {' '}
-        <FiMessageCircle color="#777" size="1.4em" /> Messenger
+        <FiMessageCircle color="#777" size="1.4em" />
+        Messenger
       </NavLink>
     </div>
     <div className={s.li_wr}>
       <NavLink className={s.li} to="/friends">
         {' '}
-        <IoPeopleOutline color="#777" size="1.4em" /> Friends
+        <IoPeopleOutline color="#777" size="1.4em" />
+        Friends
       </NavLink>
     </div>
     <div className={s.li_wr}>
       <NavLink className={s.li} to="/photos">
         {' '}
-        <HiOutlinePhotograph color="#777" size="1.4em" /> Photos
+        <HiOutlinePhotograph color="#777" size="1.4em" />
+        Photos
       </NavLink>
     </div>
   </div>

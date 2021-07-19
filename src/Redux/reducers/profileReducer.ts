@@ -8,8 +8,18 @@ import {
 
 const initialState: ProfileT = {
   posts: [
-    { key: 1, name: 'Sanya', text: 'Bilo ne slojno, eto po lubvi', likes: 3 },
-    { key: 2, name: 'Danya', text: 'Na football go?', likes: 0 },
+    {
+      key: 1,
+      name: 'Sanya',
+      text: 'Bilo ne slojno, eto po lubvi',
+      likes: 3,
+    },
+    {
+      key: 2,
+      name: 'Danya',
+      text: 'Na football go?',
+      likes: 0,
+    },
   ],
   newPostText: 'snus',
 }
@@ -23,7 +33,12 @@ const profileReducer = (
       return {
         ...state,
         posts: [
-          { key: 3, name: 'Sanya', text: state.newPostText, likes: 0 },
+          {
+            key: 3,
+            name: 'Sanya',
+            text: state.newPostText,
+            likes: 0,
+          },
           ...state.posts,
         ],
         newPostText: '',

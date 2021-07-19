@@ -20,7 +20,10 @@ const friendsReducer = (
         ...state,
         profiles: state.profiles.map((n) => {
           if (action.userId === n.id) {
-            return { ...n, isFollow: !n.isFollow }
+            return {
+              ...n,
+              isFollow: !n.isFollow,
+            }
           }
           return n
         }),

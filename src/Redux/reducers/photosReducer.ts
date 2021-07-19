@@ -12,11 +12,23 @@ const photosReducer = (
 ): PhotosState => {
   switch (action.type) {
     case PhotosAT.FETCH_PHOTOS:
-      return { loading: true, error: null, photos: [] }
+      return {
+        loading: true,
+        error: null,
+        photos: [],
+      }
     case PhotosAT.FETCH_PHOTOS_SUCCESS:
-      return { loading: false, error: null, photos: action.payload }
+      return {
+        loading: false,
+        error: null,
+        photos: action.payload,
+      }
     case PhotosAT.FETCH_PHOTOS_ERROR:
-      return { loading: false, error: action.payload, photos: [] }
+      return {
+        loading: false,
+        error: action.payload,
+        photos: [],
+      }
 
     default:
       return state
