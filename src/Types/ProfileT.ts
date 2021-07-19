@@ -1,22 +1,20 @@
-export enum ProfileActionTypes {
+export enum ProfileAT {
   ADD_POST = 'ADD-POST',
   UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT',
 }
 
-export type ProfileAction = addPostAction | ChangeNewPostTextAction
+export type ProfileACT = AddPostACT | ChangeNewPostTextACT
 
-export interface addPostAction {
-  type: ProfileActionTypes.ADD_POST;
+export type AddPostACT = {
+  type: ProfileAT.ADD_POST;
 }
 
 export type NewPostT = {
-  createPost: () => void,
-  changeNewPostText: (text: string) => void,
-  newPostText: string,
+  newPostText: string
 }
 
-export interface ChangeNewPostTextAction {
-  type: ProfileActionTypes.UPDATE_NEW_POST_TEXT;
+export type ChangeNewPostTextACT = {
+  type: ProfileAT.UPDATE_NEW_POST_TEXT;
   newText: string;
 }
 

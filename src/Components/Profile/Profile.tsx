@@ -8,16 +8,14 @@ import Profile_info from './WideColumn/Profile_info/Profile_info'
 import Profile_photos from './WideColumn/Profile_photos/Profile_photos'
 import Profile_links from './WideColumn/Profile_links/Profile_links'
 import ComVideMusic from './NarrowColumn/ComVideMusic/ComVideMusic'
-import NewPostContainer from './WideColumn/NewPost/NewPostContainer'
-import WallPostsContainer from './WideColumn/WallPosts/WallPostsContainer'
+import WallPosts from './WideColumn/WallPosts/WallPosts'
+import NewPost from './WideColumn/NewPost/NewPost'
 
 const Profile = () => (
   <div className={s.columns}>
     <div className={s.narrow_column}>
       <div className={s.page_block}>
         <Profile_ava />
-
-        {/* link='https://sun2-3.userapi.com/s/v1/ig2/qM7zDX1v2vdlh0h3QF_9llzCPdn4dwrmHsgWVAyq3tZ5aQlAXceNLBCSNTa-rIXYU-nJOvIfJldniMXVjvdLCdmB.jpg?size=200x0&quality=96&crop=0,0,1620,2160&ava=1' */}
       </div>
       <div className={s.page_block}>
         <Gifts />
@@ -41,9 +39,9 @@ const Profile = () => (
         <Profile_photos />
       </div>
       <div className={s.page_block}>
-        <NewPostContainer />
+        <NewPost />
       </div>
-      <WallPostsContainer />
+      <WallPosts />
     </div>
   </div>
 )

@@ -1,26 +1,37 @@
 import React, { FC } from 'react'
+import { useDispatch } from 'react-redux'
+import {
+  AddPostAC,
+  ChangeNewPostTextAC,
+} from '../../../../Redux/action-creators/profileAC'
 import s from './NewPost.module.css'
-import { NewPostT } from '../../../../Types/ProfileT'
+import { useTypedSelector } from '../../../../hooks/hooks'
 
-export const NewPost: FC<NewPostT> = (props: NewPostT) => {
+export const NewPost: FC = () => {
+  const newPostText = useTypedSelector((state) => state.profilePage.newPostText)
+  const dispatch = useDispatch()
+
   const inputRef: React.RefObject<HTMLInputElement> = React.createRef()
 
-  const onAddPost = () => {
-    props.createPost()
+  const onChangeText = () => {
+    const text = inputRef.current?.value
+    dispatch(ChangeNewPostTextAC(String(text)))
   }
-  const onPostChange = (): void => {
-    const text = inputRef.current
-    props.changeNewPostText(String(text))
-  }
+
   return (
     <div className={s.wrapper}>
       <input
-        onChange={onPostChange}
+        onChange={onChangeText}
         ref={inputRef}
         type="text"
-        value={props.newPostText}
+        value={newPostText}
       />
-      <button onClick={onAddPost}>go</button>
+      <button
+        onClick={() => {
+          if (newPostText) dispatch(AddPostAC())
+        }}>
+        Post
+      </button>
     </div>
   )
 }

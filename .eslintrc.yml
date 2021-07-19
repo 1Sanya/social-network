@@ -37,5 +37,4 @@ rules: {
   'no-plusplus': 'off',
   'jsx-a11y/anchor-is-valid': 'off'
 
-
 }

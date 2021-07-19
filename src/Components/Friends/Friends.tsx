@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-use-before-define
 import React, { FC } from 'react'
 import Friends_list from './Friends_list/Friends_list'
 import Friends_search from './Friends_search/Friends_search'
@@ -8,20 +7,12 @@ import Peoples_category from './Peoples_category/Peoples_category'
 
 import s from './Friends.module.css'
 
-import { FriendsProps } from '../../Types/FriendsT'
-
-const Friends: FC<FriendsProps> = (props: FriendsProps) => (
+const Friends: FC = () => (
   <div className={s.wrapper}>
     <div>
       <Friends_header />
       <Friends_search />
-      <Friends_list
-        followToggle={props.followToggle}
-        // call={props.call}
-        // message={props.message}
-        // pageSize={props.pageSize}
-        // totalUserCount={props.totalUserCount}
-      />
+      <Friends_list />
     </div>
     <div>
       <Peoples_category />

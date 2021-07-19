@@ -1,13 +1,12 @@
 import React, { FC, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import s from './Friends_list.module.css'
-import { FriendsProps } from '../../../Types/FriendsT'
 import FriendItem from './FriendItem/FriendItem'
-import { fetchUsers } from '../../../Redux/action-creators/friendsAC'
+import { fetchUsersAC, followAC } from '../../../Redux/action-creators/friendsAC'
 import { useTypedSelector } from '../../../hooks/hooks'
 import { AppStateType } from '../../../Redux/store'
 
-const Friends_list: FC<FriendsProps> = (props: FriendsProps) => {
+const Friends_list: FC = () => {
   const {
     pageArray,
     profiles,
@@ -22,7 +21,7 @@ const Friends_list: FC<FriendsProps> = (props: FriendsProps) => {
   )
 
   useEffect(() => {
-    dispatch(fetchUsers())
+    dispatch(fetchUsersAC())
     const pageCount = totalUserCount / pageSize
 
     for (let i = 1; i <= pageCount; i++) {
@@ -49,7 +48,7 @@ const Friends_list: FC<FriendsProps> = (props: FriendsProps) => {
           img="https://www.searchpng.com/wp-content/uploads/2019/02/User-Icon-PNG.png"
           id={p.id}
           isFollow={p.isFollow}
-          followToggle={props.followToggle}
+          followToggle={() => { dispatch(followAC(p.id)) }}
         />
       ))}
     </div>

@@ -3,9 +3,9 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Nav from './Components/Nav/Nav'
 import Profile from './Components/Profile/Profile'
-import FriendsContainer from './Components/Friends/FriendsContainer'
-import PhotosContainer from './Components/Photos/PhotosContainer'
-import DialogsContainer from './Components/Dialogs/DialogsContainer'
+import Friends from './Components/Friends/Friends'
+import Dialogs from './Components/Dialogs/Dialogs'
+import Photos from './Components/Photos/Photos'
 
 export const App = () => (
   <BrowserRouter>
@@ -13,9 +13,9 @@ export const App = () => (
       <Nav />
       <Switch>
         <Route path="/profile" render={() => <Profile />} />
-        <Route path="/messenger" render={() => <DialogsContainer />} />
-        <Route path="/friends" render={() => <FriendsContainer />} />
-        <Route path="/photos" render={() => <PhotosContainer />} />
+        <Route path="/messenger" render={() => <Dialogs />} />
+        <Route path="/friends" render={() => <Friends />} />
+        <Route path="/photos" render={() => <Photos />} />
         <Route path="/" render={() => <Profile />} />
       </Switch>
     </div>

@@ -5,11 +5,9 @@ import Dialogs_chats from './DIalogs_chats/Dialogs_chats'
 import Dialogs_footer from './DIalogs_footer/Dialogs_footer'
 import { idType } from '../../Redux/reducers/dialogsReducer'
 
-interface PropsType {
-  id: Array<idType>;
-}
 
-export const Dialogs: FC<PropsType> = (props) => (
+
+export const Dialogs: FC = () => (
   <div className={s.page_wr}>
     Messenger
     <Dialogs_header />

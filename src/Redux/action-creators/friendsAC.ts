@@ -8,7 +8,7 @@ import {
 } from '../../Types/FriendsT'
 import { instance } from '../../async/api'
 
-export const fetchUsers = () => async (dispatch: Dispatch<FriendsACT>) => {
+export const fetchUsersAC = () => async (dispatch: Dispatch<FriendsACT>) => {
   try {
     dispatch({ type: FriendsAT.FETCH_USERS })
     const response = await instance.get(

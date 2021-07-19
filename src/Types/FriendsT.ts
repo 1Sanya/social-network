@@ -8,15 +8,6 @@ export type FriendsState = {
   pageArray: Array<number>,
 }
 
-export type FriendsProps = {
-  followToggle: (userId: number) => void,
-  // call: (userId: number) => void;
-  // message: (userId: number) => void;
-  // totalUserCount: number;
-  // pageSize: number;
-  // currentPage: number;
-}
-
 export enum FriendsAT {
   FOLLOW_TOGGLE = 'FOLLOW_TOGGLE',
   OPED_DIALOG = 'OPEN-DIALOG',
