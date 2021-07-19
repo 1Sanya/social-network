@@ -1,0 +1,41 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - 'plugin:react/recommended'
+  - 'plugin:react-hooks/recommended'
+  - 'airbnb'
+  - 'plugin:@typescript-eslint/recommended'
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 12
+  sourceType: module
+plugins:
+  - react
+  - '@typescript-eslint'
+rules: {
+  "no-use-before-define": "off",
+  "@typescript-eslint/no-use-before-define": [ "error" ],
+  "semi": "off",
+  "@typescript-eslint/semi": "off",
+  "import/no-unresolved": "off",
+  "import/extensions": "off",
+  "no-unused-vars": "off",
+  "no-shadow": "off",
+  "import/prefer-default-export": "off",
+  'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
+  "react/destructuring-assignment": 'off',
+  'comma-dangle': 'off',
+  'react/button-has-type': 'off',
+  'react/jsx-pascal-case':'off',
+  'camelcase': 'off',
+  'jsx-a11y/no-noninteractive-element-interactions': 'off',
+  'jsx-a11y/no-static-element-interactions': 'off',
+  'jsx-a11y/click-events-have-key-events': 'off',
+  'no-plusplus': 'off',
+  'jsx-a11y/anchor-is-valid': 'off'
+
+
+}

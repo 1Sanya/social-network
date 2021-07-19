@@ -15,7 +15,7 @@ export const fetchPhotos = () => async (dispatch: Dispatch<PhotosACT>) => {
   } catch (e) {
     dispatch({
       type: PhotosAT.FETCH_PHOTOS_ERROR,
-      payload: 'хуйня какая-то, не работает',
+      payload: '* какая-то, не работает',
     })
   }
 }
