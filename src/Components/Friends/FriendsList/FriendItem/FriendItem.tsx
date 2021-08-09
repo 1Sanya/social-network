@@ -3,7 +3,7 @@ import { BiUserPlus, BsDot, HiOutlineX } from 'react-icons/all'
 import s from './FriendItem.module.css'
 import { FriendsItemProps } from '../../../../Types/FriendsT'
 
-const FriendItem: FC<FriendsItemProps> = (props: FriendsItemProps) => (
+export const FriendItem: FC<FriendsItemProps> = (props: FriendsItemProps) => (
   <div className={s.wrapper}>
     <a href={String(props.id)}>
       <img className={s.ava} src={String(props.img)} alt="" />
@@ -48,5 +48,3 @@ const FriendItem: FC<FriendsItemProps> = (props: FriendsItemProps) => (
     </div>
   </div>
 )
-
-export default FriendItem

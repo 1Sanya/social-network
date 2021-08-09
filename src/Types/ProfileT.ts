@@ -6,16 +6,16 @@ export enum ProfileAT {
 export type ProfileACT = AddPostACT | ChangeNewPostTextACT
 
 export type AddPostACT = {
-  type: ProfileAT.ADD_POST;
+  type: ProfileAT.ADD_POST,
 }
 
 export type NewPostT = {
-  newPostText: string
+  newPostText: string,
 }
 
 export type ChangeNewPostTextACT = {
-  type: ProfileAT.UPDATE_NEW_POST_TEXT;
-  newText: string;
+  type: ProfileAT.UPDATE_NEW_POST_TEXT,
+  newText: string,
 }
 
 export interface ProfileT {

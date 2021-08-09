@@ -1,18 +1,17 @@
 import React, { FC, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import s from './Friends_list.module.css'
-import FriendItem from './FriendItem/FriendItem'
-import { fetchUsersAC, followAC } from '../../../Redux/action-creators/friendsAC'
+import s from './FriendsList.module.css'
+import {
+  fetchUsersAC,
+  followAC,
+} from '../../../Redux/action-creators/FriendsAC'
 import { useTypedSelector } from '../../../hooks/hooks'
 import { AppStateType } from '../../../Redux/store'
+import { FriendItem } from './FriendItem/FriendItem'
 
-const Friends_list: FC = () => {
+const FriendsList: FC = () => {
   const {
-    pageArray,
-    profiles,
-    loading,
-    error, totalUserCount,
-    pageSize
+    pageArray, profiles, loading, error, totalUserCount, pageSize
   } = useTypedSelector((state) => state.friendsPage)
   const dispatch = useDispatch()
 
@@ -48,11 +47,13 @@ const Friends_list: FC = () => {
           img="https://www.searchpng.com/wp-content/uploads/2019/02/User-Icon-PNG.png"
           id={p.id}
           isFollow={p.isFollow}
-          followToggle={() => { dispatch(followAC(p.id)) }}
+          followToggle={() => {
+            dispatch(followAC(p.id))
+          }}
         />
       ))}
     </div>
   )
 }
 
-export default Friends_list
+export default FriendsList

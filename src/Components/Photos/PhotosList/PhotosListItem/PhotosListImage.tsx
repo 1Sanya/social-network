@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react'
 import { PhotosImageT } from '../../../../Types/PhotosT'
-import s from './Photos_image.module.css'
+import s from './PhotosListImage.module.css'
 
 const PhotosImage: FC<PhotosImageT> = (props: PhotosImageT) => {
   // todo replace const to state, create reducers

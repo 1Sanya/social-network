@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Friends_list from './Friends_list/Friends_list'
+import FriendsList from './FriendsList/FriendsList'
 import Friends_search from './Friends_search/Friends_search'
 import Friends_header from './Friends_header/Friends_header'
 import May_be_friends from './May_be_friends/May_be_friends'
@@ -12,7 +12,7 @@ const Friends: FC = () => (
     <div>
       <Friends_header />
       <Friends_search />
-      <Friends_list />
+      <FriendsList />
     </div>
     <div>
       <Peoples_category />
