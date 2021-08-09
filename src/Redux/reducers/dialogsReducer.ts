@@ -1,19 +1,11 @@
 import { AnyAction } from 'redux'
+import { DialogsT } from '../../Types/DialogsT'
 
-export type idType = {
-  id: number,
-  name: string,
-}
-
-export type stateType = {
-  id: Array<idType>,
-}
-
-const initialState: stateType = {
-  id: [
+const initialState: DialogsT = {
+  users: [
     {
       id: 1,
-      name: 'sanya',
+      name: 'Sanya',
     },
     {
       id: 2,
@@ -21,18 +13,20 @@ const initialState: stateType = {
     },
     {
       id: 3,
-      name: 'zed',
+      name: 'Zed',
     },
     {
       id: 4,
-      name: 'yi',
+      name: 'Yi',
     },
     {
       id: 5,
-      name: 'tom',
+      name: 'Tom',
     },
   ],
 }
+
+// todo anyActionType
 
 const dialogsReducer = (state = initialState, action: AnyAction) => state
 

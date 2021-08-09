@@ -1,10 +1,4 @@
-import {
-  AddPostACT,
-  ChangeNewPostTextACT,
-  ProfileACT,
-  ProfileAT,
-  ProfileT,
-} from '../../Types/ProfileT'
+import { ProfileACT, ProfileAT, ProfileT } from '../../Types/ProfileT'
 
 const initialState: ProfileT = {
   posts: [
@@ -21,13 +15,10 @@ const initialState: ProfileT = {
       likes: 0,
     },
   ],
-  newPostText: 'da-da',
+  newPostText: '',
 }
 
-const profileReducer = (
-  state = initialState,
-  action: ProfileACT
-): ProfileT => {
+const profileReducer = (state = initialState, action: ProfileACT): ProfileT => {
   switch (action.type) {
     case ProfileAT.ADD_POST: {
       return {

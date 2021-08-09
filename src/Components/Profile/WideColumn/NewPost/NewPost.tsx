@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import {
   AddPostAC,
   ChangeNewPostTextAC,
-} from '../../../../Redux/action-creators/profileAC'
+} from '../../../../Redux/action-creators/ProfileAC'
 import s from './NewPost.module.css'
 import { useTypedSelector } from '../../../../hooks/hooks'
 
