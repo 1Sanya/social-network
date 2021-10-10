@@ -22,6 +22,14 @@ const Nav = () => (
       </NavLink>
     </div>
     <div className={s.li_wr}>
+      <NavLink className={s.li} to="/messengertrompley">
+        {' '}
+        <FiMessageCircle color="#777" size="1.4em" />
+        MessengerWant
+      </NavLink>
+    </div>
+
+    <div className={s.li_wr}>
       <NavLink className={s.li} to="/friends">
         {' '}
         <IoPeopleOutline color="#777" size="1.4em" />

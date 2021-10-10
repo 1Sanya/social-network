@@ -5,7 +5,7 @@ import RightHeader from './RightHeader/RightHeader'
 import RightFooter from './RightFooter/RightFooter'
 
 export const RightColumn: FC = () => (
-  <div>
+  <div className={s.RightColumn}>
     <RightHeader />
     <Messages />
     <RightFooter />

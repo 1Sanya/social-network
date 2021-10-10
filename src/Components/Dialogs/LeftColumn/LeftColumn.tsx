@@ -4,7 +4,7 @@ import LeftHeader from './LeftHeader/LeftHeader'
 import LeftUserList from './LeftUserList/LeftUserList'
 
 export const LeftColumn: FC = () => (
-  <div>
+  <div className={s.LeftColumn}>
     <LeftHeader />
     <LeftUserList />
   </div>
