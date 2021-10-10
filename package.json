@@ -20,6 +20,7 @@
     "react-scripts": "^4.0.3",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.42.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -72,5 +73,4 @@
     "source-map-loader": "^3.0.0",
     "typescript": "^3.9.10"
   }
-
 }
