@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export type usersT = {
   id: number,
   name: string,
@@ -10,4 +12,8 @@ export interface DialogsItemProps {
 
 export type DialogsT = {
   users: Array<usersT>,
+}
+
+export interface Dialogs {
+  children?: ReactNode;
 }
