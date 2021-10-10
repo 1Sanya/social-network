@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+.icon {
+  position: absolute;
+  padding: 10px 10px 10px 5px;
+  min-width: 40px;
+  color: #455052;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+
+
+.input {
+  border: 2px solid #212121;
+  border-radius: 60px;
+  height: 25px;
+  width: 200px;
+  color: #fff;
+  background-color: #2C2C2C;
+  padding: 10px 10px 10px 40px;
+
+  &:focus {
+    outline: none;
+    border: 2px solid #8774E1;
+  }
+}
+
+.focused {
+  color: #8774E1;
+}
+
