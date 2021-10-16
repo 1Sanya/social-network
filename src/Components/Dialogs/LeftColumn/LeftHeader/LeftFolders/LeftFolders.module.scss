@@ -1,0 +1,39 @@
+.tabMenu {
+  margin: auto;
+  max-width: 270px;
+
+}
+
+.modal__body::-webkit-scrollbar, .items::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.modal__body, .items {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.items {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.btn {
+  background-color: #212121;
+  padding: .625rem;
+  color: #707579;
+  cursor: pointer;
+  border: none;
+
+}
+
+.btn:hover {
+  background-color: #2b2b2b;
+
+}
+
+.active {
+  color: #8774E1;
+}
+
