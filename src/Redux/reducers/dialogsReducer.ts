@@ -1,5 +1,4 @@
-import { AnyAction } from 'redux'
-import { DialogsT } from '../../Types/DialogsT'
+import { DialogsACT, DialogsAT, DialogsT } from '../../Types/DialogsT'
 
 const initialState: DialogsT = {
   users: [
@@ -25,19 +24,38 @@ const initialState: DialogsT = {
     },
   ],
   folders: [
-    { id: 1, text: 'my', },
-    { id: 2, text: 'work', },
-    { id: 3, text: 'cs', },
-    { id: 4, text: 'микро', },
-    { id: 4, text: 'туча', },
-    { id: 5, text: 'туча', },
-    { id: 6, text: 'туча', },
-    { id: 7, text: 'туча', },
+    { id: 1, text: 'my', isActive: true },
+    { id: 2, text: 'work', isActive: false },
+    { id: 3, text: 'cs', isActive: false },
+    { id: 4, text: 'микро', isActive: false },
+    { id: 5, text: 'туча', isActive: false },
+    { id: 6, text: 'туча', isActive: false },
+    { id: 7, text: 'туча', isActive: false },
+    { id: 8, text: 'туча', isActive: false },
   ]
 }
 
-// todo anyActionType
-
-const dialogsReducer = (state = initialState, action: AnyAction) => state
+const dialogsReducer = (state = initialState, action: DialogsACT) => {
+  switch (action.type) {
+    case DialogsAT.SET_ACTIVE_FOLDER:
+      return {
+        ...state,
+        folders: state.folders.map((object) => {
+          if (action.id === object.id) {
+            return {
+              ...object,
+              isActive: true
+            }
+          }
+          return {
+            ...object,
+            isActive: false
+          }
+        }),
+      }
+    default:
+      return state
+  }
+}
 
 export default dialogsReducer
