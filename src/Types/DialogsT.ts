@@ -19,7 +19,7 @@ export type DialogsChatsT = {
   id: number,
   name: string,
   img: string,
-  folders: Array<number> | number | null
+  folders?: Array<number> | number | null
 }
 
 export enum DialogsAT {
