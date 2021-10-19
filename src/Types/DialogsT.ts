@@ -6,12 +6,20 @@ export type usersT = {
 export type DialogsT = {
   users: Array<usersT>,
   folders:Array<DialogFoldersT>,
+  chats: Array<DialogsChatsT>
 }
 
 export type DialogFoldersT = {
   id: number,
   text: string,
   isActive: boolean
+}
+
+export type DialogsChatsT = {
+  id: number,
+  name: string,
+  img: string,
+  folders: Array<number> | number | null
 }
 
 export enum DialogsAT {
