@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
-import s from './LeftSearch.module.scss'
+import s from './LeftSearch.module.css'
 
 const LeftSearch = () => {
   const [status, setStatus] = useState(false);

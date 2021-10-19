@@ -24,6 +24,16 @@ const initialState: DialogsT = {
       name: 'Tom',
     },
   ],
+  folders: [
+    { id: 1, text: 'my', },
+    { id: 2, text: 'work', },
+    { id: 3, text: 'cs', },
+    { id: 4, text: 'микро', },
+    { id: 4, text: 'туча', },
+    { id: 5, text: 'туча', },
+    { id: 6, text: 'туча', },
+    { id: 7, text: 'туча', },
+  ]
 }
 
 // todo anyActionType

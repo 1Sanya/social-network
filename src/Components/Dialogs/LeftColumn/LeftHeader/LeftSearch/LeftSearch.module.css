@@ -22,16 +22,15 @@
   color: #87a1ae;
   background-color: #2C2C2C;
   padding: 10px 10px 10px 40px;
-
-  &:focus {
-    outline: none;
-    border: 2px solid #8774E1;
-  }
-  &::placeholder {
-    color: #87a1ae;
-  }
 }
+.input:focus {
+  outline: none;
+  border: 2px solid #8774E1;
+}
+.input::placeholder {
+  color: #87a1ae;
 
+}
 .focused {
   color: #8774E1;
 }
