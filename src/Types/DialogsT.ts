@@ -3,17 +3,40 @@ export type usersT = {
   name: string,
 }
 
-export interface DialogsItemProps {
-  id: number,
-  name: string,
-}
-
 export type DialogsT = {
   users: Array<usersT>,
-  folders:Array<MessengerFoldersT>,
+  folders:Array<DialogFoldersT>,
+  chats: Array<DialogsChatsT>
 }
 
-export type MessengerFoldersT = {
+export type DialogFoldersT = {
   id: number,
   text: string,
+  isActive: boolean
 }
+
+export type DialogsChatsT = {
+  id: number,
+  name: string,
+  img: string,
+  folders?: Array<number> | number | null,
+  isActive?: boolean
+}
+
+export enum DialogsAT {
+  SET_ACTIVE_FOLDER = 'SET_ACTIVE_FOLDER',
+  SET_ACTIVE_CHAT = 'SET_ACTIVE_CHAT'
+}
+
+export type setActiveFolderACT = {
+  type: DialogsAT.SET_ACTIVE_FOLDER,
+  id: number
+}
+
+export type setActiveChatACT = {
+  type: DialogsAT.SET_ACTIVE_CHAT,
+  id: number
+}
+
+export type DialogsACT = setActiveFolderACT |
+  setActiveChatACT

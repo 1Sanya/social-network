@@ -1,39 +1,62 @@
 .tabMenu {
   margin: auto;
   max-width: 270px;
-
+  padding-top: 4px;
 }
 
-.modal__body::-webkit-scrollbar, .items::-webkit-scrollbar {
+.items::-webkit-scrollbar {
   width: 0;
   background: transparent;
 }
 
-.modal__body, .items {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
 .items {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .btn {
+  border: none;
+  border-radius: 12% 12% 0 0;
+  min-width: 50px ;
   background-color: #212121;
   padding: .625rem;
+  padding-bottom: 1px;
   color: #707579;
   cursor: pointer;
-  border: none;
-
 }
 
 .btn:hover {
   background-color: #2b2b2b;
+}
 
+.btn::after {
+  padding-top: 2px;
+  content: '';
+  border-bottom: 2px solid #212121;
+  width: 95%;
+  height: 6px;
+  display: block;
+  margin: 0 auto;
 }
 
 .active {
   color: #8774E1;
+}
+.active:hover {
+  background-color: #212121;
+  cursor: default;
+}
+
+.active::after {
+  padding-top: 2px;
+  content: '';
+  border-bottom: 2px solid #8774E1;
+  min-width: 35px;
+  width: 95%;
+  display: block;
+  margin: 0 auto;
 }
 
