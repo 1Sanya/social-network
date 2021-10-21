@@ -19,11 +19,13 @@ export type DialogsChatsT = {
   id: number,
   name: string,
   img: string,
-  folders?: Array<number> | number | null
+  folders?: Array<number> | number | null,
+  isActive?: boolean
 }
 
 export enum DialogsAT {
-  SET_ACTIVE_FOLDER = 'SET_ACTIVE_FOLDER'
+  SET_ACTIVE_FOLDER = 'SET_ACTIVE_FOLDER',
+  SET_ACTIVE_CHAT = 'SET_ACTIVE_CHAT'
 }
 
 export type setActiveFolderACT = {
@@ -31,4 +33,10 @@ export type setActiveFolderACT = {
   id: number
 }
 
-export type DialogsACT = setActiveFolderACT
+export type setActiveChatACT = {
+  type: DialogsAT.SET_ACTIVE_CHAT,
+  id: number
+}
+
+export type DialogsACT = setActiveFolderACT |
+  setActiveChatACT

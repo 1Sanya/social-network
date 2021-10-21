@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 import s from './RightHeader.module.css'
-import RightSearch from './RightSearch/RightSearch'
 
-const RightHeader = () => (
+const RightHeader:FC<any> = (props) => (
   <div className={s.wrapper}>
-    <RightSearch />
+    {props.name}
   </div>
 )
 

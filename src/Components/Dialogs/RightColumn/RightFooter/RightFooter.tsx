@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import s from './RightFooter.module.css'
 
-const RightFooter = () => (
+const RightFooter:FC<any> = (props) => (
   <div className={s.wrapper}>
     RightFooter
   </div>

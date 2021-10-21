@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import s from './Messages.module.css'
 
-const Messages = () => (
+const Messages:FC<any> = (props) => (
   <div className={s.wrapper}>
     Messages
   </div>

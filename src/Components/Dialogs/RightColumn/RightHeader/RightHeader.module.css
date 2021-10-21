@@ -1,4 +1,9 @@
 .wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  height: 50px;
+  background-color: #212121;
+  border-left: #181718 1px solid;
 }
+
+
