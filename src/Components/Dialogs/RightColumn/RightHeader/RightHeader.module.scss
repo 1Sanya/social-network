@@ -1,0 +1,58 @@
+.wrapper {
+  padding: 0 20px;
+  height: 50px;
+  border-left: #181718 1px solid;
+
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #212121;
+  cursor: pointer;
+}
+
+.subWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.img {
+  padding-right: 7px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.name {
+  color: #fff;
+}
+
+.icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: #aaa;
+}
+
+.iconWrapper {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color .1s linear;
+
+  &:hover {
+    background-color: #2b2b2b;
+  }
+}
+
+.leftIcon {
+  margin-right: 6px;
+}
+
+
+
+

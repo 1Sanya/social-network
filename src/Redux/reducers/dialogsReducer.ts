@@ -77,7 +77,11 @@ const initialState: DialogsT = {
       isActive: false
     },
   ],
-  activeChat: {}
+  activeChat: [
+    {
+      name: 'loading', image: 'loading', id: 1, folders: undefined
+    }
+  ]
 }
 
 const dialogsReducer = (state = initialState, action: DialogsACT) => {
