@@ -39,7 +39,7 @@ const initialState: DialogsT = {
       name: 'Alexandr Tarasov',
       folders: 1,
       img: 'https://images.generated.photos/r5UH0rwpRxBobMyUZ8Gv4Bxs2TidIshdrsOf_jG075s/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LmNvbmQvNTE1OTFh/ZjktMjZjMy00NTI1/LWJjNTEtOGQ1Zjlj/Mjc3NmVjLmpwZw.jpg',
-      isActive: true
+      isActive: false,
     },
     {
       id: 2,
@@ -77,11 +77,9 @@ const initialState: DialogsT = {
       isActive: false
     },
   ],
-  activeChat: [
-    {
-      name: 'loading', image: 'loading', id: 1, folders: undefined
-    }
-  ]
+  activeChat: [{
+    name: 'select chat', img: 'https://www.rffager.com/wp-content/uploads/2018/06/GrayBlock.jpg', id: 7, folders: 3
+  }]
 }
 
 const dialogsReducer = (state = initialState, action: DialogsACT) => {

@@ -21,7 +21,8 @@ export type DialogsChatsT = {
   name: string,
   img: string,
   folders?: Array<number> | number | null,
-  isActive?: boolean
+  isActive?: boolean,
+  activeChatToggle?: (id: number) => void
 }
 
 export enum DialogsAT {
