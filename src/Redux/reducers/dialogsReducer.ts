@@ -76,7 +76,8 @@ const initialState: DialogsT = {
       img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/LGBT_flag_square.svg/2048px-LGBT_flag_square.svg.png',
       isActive: false
     },
-  ]
+  ],
+  activeChat: {}
 }
 
 const dialogsReducer = (state = initialState, action: DialogsACT) => {
@@ -112,6 +113,15 @@ const dialogsReducer = (state = initialState, action: DialogsACT) => {
             isActive: false
           }
         }),
+      }
+    case DialogsAT.GET_ACTIVE_CHAT:
+      return {
+        ...state,
+        activeChat: state.chats.filter((chat) => {
+          if (chat.isActive) {
+            return chat
+          }
+        })
       }
     default:
       return state

@@ -6,7 +6,8 @@ export type usersT = {
 export type DialogsT = {
   users: Array<usersT>,
   folders:Array<DialogFoldersT>,
-  chats: Array<DialogsChatsT>
+  chats: Array<DialogsChatsT>,
+  activeChat: any
 }
 
 export type DialogFoldersT = {
@@ -25,7 +26,8 @@ export type DialogsChatsT = {
 
 export enum DialogsAT {
   SET_ACTIVE_FOLDER = 'SET_ACTIVE_FOLDER',
-  SET_ACTIVE_CHAT = 'SET_ACTIVE_CHAT'
+  SET_ACTIVE_CHAT = 'SET_ACTIVE_CHAT',
+  GET_ACTIVE_CHAT = 'GET_ACTIVE_CHAT'
 }
 
 export type setActiveFolderACT = {
@@ -38,5 +40,10 @@ export type setActiveChatACT = {
   id: number
 }
 
+export type getActiveChatACT = {
+  type: DialogsAT.GET_ACTIVE_CHAT
+}
+
 export type DialogsACT = setActiveFolderACT |
-  setActiveChatACT
+  setActiveChatACT |
+  getActiveChatACT
