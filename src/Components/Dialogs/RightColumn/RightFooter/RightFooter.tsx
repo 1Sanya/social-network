@@ -1,11 +1,18 @@
 import React, { FC } from 'react'
-import s from './RightFooter.module.css'
+import { FaRegSmile, MdSend } from 'react-icons/all'
+import s from './RightFooter.module.scss'
 
 const RightFooter:FC<any> = (props) => {
   const { activeChat } = props
   return (
     <div className={s.wrapper}>
-      RightFooter
+      <button className={`${s.button} ${s.smile}`}>
+        <FaRegSmile className={s.smilesIcon} />
+      </button>
+      <input className={s.input} type="text" />
+      <button className={`${s.button} ${s.send}`}>
+        <MdSend className={s.sendIcon} />
+      </button>
     </div>
   )
 }

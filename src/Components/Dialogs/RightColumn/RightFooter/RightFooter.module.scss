@@ -1,0 +1,62 @@
+.wrapper {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #181718;
+}
+
+.input {
+  padding: 17px 17px 17px 44px;
+  height: 19px;
+  width: 67%;
+  border: none;
+  color: #fff;
+  background-color: #212121;
+  border-radius: 10px;
+  margin: 0 20px 0 30px;
+  &:focus {
+    outline:none;
+  }
+}
+
+.button {
+  border: 0;
+  background-color: #212121;
+}
+
+.button.smile {
+  position: absolute;
+  margin: 10px 10px 10px 40px;
+
+}
+
+.button.send {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  transition: background-color .1s linear;
+  &:hover {
+    background-color: #8774E1;
+  }
+}
+
+.button.send:hover .sendIcon {
+  transition: color .1s linear;
+  color: #fff;
+}
+
+.smilesIcon {
+  color: #7f7f7f;
+  transition: color .2s linear;
+  width: 1.3em;
+  height: 1.3em;
+  &:hover {
+    color: #8774E1;
+  }
+}
+
+.sendIcon {
+  color: #8774E1;
+  width: 1.3em;
+  height: 1.3em;
+}
