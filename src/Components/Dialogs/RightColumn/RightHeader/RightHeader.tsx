@@ -1,26 +1,30 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiDotsVerticalRounded } from 'react-icons/all'
 import s from './RightHeader.module.scss'
+import { useTypedSelector } from '../../../../hooks/hooks'
 
-const RightHeader:FC<any> = (props) => {
-  const { activeChat } = props
-  return (
-    <div className={s.wrapper}>
-      <div className={s.subWrapper}>
-        <img className={s.img} src={activeChat.img} alt="" />
-        <p className={s.name}>{activeChat.name}</p>
-      </div>
-      <div className={s.subWrapper}>
-        <div className={`${s.iconWrapper} ${s.leftIcon}`}>
-          <AiOutlineSearch className={s.icon} />
+const RightHeader = () => {
+  const { chats, activeChat } = useTypedSelector((state) => state.dialogsPage)
+  if (activeChat) {
+    return (
+      <div className={s.wrapper}>
+        <div className={s.subWrapper}>
+          <img className={s.img} src={chats[activeChat! - 1].img} alt="" />
+          <p className={s.name}>{chats[activeChat! - 1].name}</p>
         </div>
-        <div className={s.iconWrapper}>
-          <BiDotsVerticalRounded className={s.icon} />
+        <div className={s.subWrapper}>
+          <div className={`${s.iconWrapper} ${s.leftIcon}`}>
+            <AiOutlineSearch className={s.icon} />
+          </div>
+          <div className={s.iconWrapper}>
+            <BiDotsVerticalRounded className={s.icon} />
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
+  return <div className={s.tramplayWrapper}>Select Dialog</div>
 }
 
 export default RightHeader

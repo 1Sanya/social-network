@@ -2,13 +2,13 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useTypedSelector } from '../../../../hooks/hooks'
 import Chat from './Chat'
-import { getActiveChatAC, setActiveChatAC } from '../../../../Redux/action-creators/DialogsAC'
+import { setActiveChatAC } from '../../../../Redux/action-creators/DialogsAC'
 
 const LeftUserList = () => {
   const { chats, folders } = useTypedSelector((state) => state.dialogsPage)
   const dispatch = useDispatch()
 
-  const chati = folders.map((folder) => {
+  const chatList = folders.map((folder) => {
     if (folder.isActive) {
       return chats.map((chat) => {
         if (chat.folders === folder.id) {
@@ -19,8 +19,7 @@ const LeftUserList = () => {
               name={chat.name}
               img={chat.img}
               activeChatToggle={() => {
-                dispatch(setActiveChatAC(chat.id))
-                dispatch(getActiveChatAC())
+                dispatch(setActiveChatAC(chat.id!))
               }}
             />
           )
@@ -30,7 +29,7 @@ const LeftUserList = () => {
   })
   return (
     <div>
-      {chati}
+      {chatList}
     </div>
   )
 }

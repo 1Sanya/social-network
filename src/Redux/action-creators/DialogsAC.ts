@@ -1,8 +1,8 @@
 import {
   DialogsAT,
-  getActiveChatACT,
+  AddNewMessageACT,
   setActiveChatACT,
-  setActiveFolderACT,
+  setActiveFolderACT, setNewMessageACT,
 } from '../../Types/DialogsT'
 
 export const setActiveFolderAC = (id: number):setActiveFolderACT => ({
@@ -15,6 +15,13 @@ export const setActiveChatAC = (id: number):setActiveChatACT => ({
   id
 })
 
-export const getActiveChatAC = ():getActiveChatACT => ({
-  type: DialogsAT.GET_ACTIVE_CHAT
+export const setNewMessageAC = (newText: string, id: number):setNewMessageACT => ({
+  type: DialogsAT.SET_NEW_MESSAGE,
+  newText,
+  id
+})
+
+export const addNewMessageAC = (id: number):AddNewMessageACT => ({
+  type: DialogsAT.ADD_NEW_MESSAGE,
+  id
 })

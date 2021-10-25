@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 8px;
+}
+
+.message {
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.messageByMe {
+  align-self: flex-end;
+  border: 1px #8774E1 solid;
+  background-color: #8774E1;
+}
+
+.messageByCompanion {
+  align-self: flex-start;
+  border: 1px #212121 solid;
+  background-color: #212121;
+}

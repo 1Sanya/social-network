@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   background-color: #181718;
-  height: 85vh;
+  height: 83vh;
+  padding-bottom: 2vh;
 }

@@ -6,6 +6,7 @@
 }
 
 .input {
+  margin: 0 20px 0 30px;
   padding: 17px 17px 17px 44px;
   height: 19px;
   width: 67%;
@@ -13,7 +14,7 @@
   color: #fff;
   background-color: #212121;
   border-radius: 10px;
-  margin: 0 20px 0 30px;
+  cursor: text;
   &:focus {
     outline:none;
   }
@@ -27,7 +28,11 @@
 .button.smile {
   position: absolute;
   margin: 10px 10px 10px 40px;
+}
 
+.button.paperClip {
+  position: absolute;
+  margin: 10px 10px 10px 400px;
 }
 
 .button.send {
@@ -45,11 +50,21 @@
   color: #fff;
 }
 
-.smilesIcon {
+.smilesIcon, {
   color: #7f7f7f;
   transition: color .2s linear;
   width: 1.3em;
   height: 1.3em;
+  &:hover {
+    color: #8774E1;
+  }
+}
+
+.paperClipIcon {
+  color: #7f7f7f;
+  transition: color .2s linear;
+  width: 1.5em;
+  height: 1.5em;
   &:hover {
     color: #8774E1;
   }
@@ -60,3 +75,10 @@
   width: 1.3em;
   height: 1.3em;
 }
+
+.trampleyWrapper {
+  background-color: #181718;
+  height: 200px;
+}
+
+
