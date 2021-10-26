@@ -6,23 +6,25 @@ import { addNewMessageAC, setNewMessageAC } from '../../../../Redux/action-creat
 import { useTypedSelector } from '../../../../hooks/hooks'
 
 const RightFooter = () => {
-  const {
-    chats,
-    activeChat
-  } = useTypedSelector((state) => state.dialogsPage)
+  const { chats, activeChat } = useTypedSelector((state) => state.dialogsPage)
   const dispatch = useDispatch()
+
   if (activeChat) {
     const currentChat = chats[activeChat! - 1]
     const {
       id,
       newMessage
     } = currentChat
-
     const inputRef: React.RefObject<HTMLInputElement> = React.createRef()
     const onChangeMessage = (() => {
       const text = inputRef.current?.value
       dispatch(setNewMessageAC(text!, id!))
     })
+    const handleKeyDown = (event:any) => {
+      if (event.key === 'Enter') {
+        dispatch(addNewMessageAC(id!))
+      }
+    }
     return (
       <div className={s.wrapper}>
         <button className={`${s.button} ${s.smile}`}>
@@ -34,6 +36,7 @@ const RightFooter = () => {
           ref={inputRef}
           onChange={onChangeMessage}
           type="text"
+          onKeyDown={handleKeyDown}
         />
         <button className={`${s.button} ${s.paperClip}`}>
           <AiOutlinePaperClip className={s.paperClipIcon} />
