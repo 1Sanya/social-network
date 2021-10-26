@@ -1,6 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { AiOutlinePaperClip, FaRegSmile, MdSend } from 'react-icons/all'
+import {
+  AiOutlinePaperClip,
+  CgFile,
+  FaRegSmile,
+  IoMdPhotos,
+  MdSend
+} from 'react-icons/all'
 import s from './RightFooter.module.scss'
 import { addNewMessageAC, setNewMessageAC } from '../../../../Redux/action-creators/DialogsAC'
 import { useTypedSelector } from '../../../../hooks/hooks'
@@ -41,6 +47,18 @@ const RightFooter = () => {
         <button className={`${s.button} ${s.paperClip}`}>
           <AiOutlinePaperClip className={s.paperClipIcon} />
         </button>
+        <div className={s.bubbleMenuWrapper}>
+          <div className={s.bubbleMenu}>
+            <button className={s.bubbleMenuItem}>
+              <IoMdPhotos className={s.bubbleIcon} />
+              Photo or video
+            </button>
+            <button className={s.bubbleMenuItem}>
+              <CgFile className={s.bubbleIcon} />
+              File
+            </button>
+          </div>
+        </div>
         <button onClick={() => dispatch(addNewMessageAC(id!))} className={`${s.button} ${s.send}`}>
           <MdSend className={s.sendIcon} />
         </button>
