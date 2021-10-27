@@ -1,11 +1,17 @@
 .chatWrapper {
+  border-radius: 10px;
   padding-top: 5px;
+  margin: 0 8px;
   border-bottom: #1f1e1e 1px solid;
   height: 67px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   cursor: pointer;
+}
+
+.active {
+  background-color: #8774E1;
 }
 
 .img {
@@ -29,6 +35,10 @@
 .message {
   color: #707579;
   font-size: 14px;
+}
+
+.message.active {
+  color: #fff;
 }
 
 

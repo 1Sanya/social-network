@@ -16,6 +16,7 @@ const LeftUserList = () => {
             <Chat
               key={chat.id}
               id={chat.id}
+              isActive={chat.isActive}
               name={chat.name}
               img={chat.img}
               activeChatToggle={() => {
