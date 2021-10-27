@@ -100,7 +100,18 @@ const initialState: DialogsT = {
       newMessage: ''
     },
   ],
-  activeChat: null
+  activeChat: null,
+  emoji: [
+    { smile: '🐑', id: 1 },
+    { smile: '✌️', id: 2 },
+    { smile: '😌', id: 3 },
+    { smile: '😍', id: 4 },
+    { smile: '🥰', id: 5 },
+    { smile: '😒', id: 6 },
+    { smile: '🤡', id: 7 },
+    { smile: '😡', id: 8 },
+    { smile: '😶', id: 9 }
+  ]
 }
 
 const dialogsReducer = (state = initialState, action: DialogsACT):DialogsT => {
@@ -167,6 +178,19 @@ const dialogsReducer = (state = initialState, action: DialogsACT):DialogsT => {
                 ...chat.messages!,
               ],
               newMessage: ''
+            }
+          }
+          return chat
+        })
+      }
+    case DialogsAT.ADD_EMOJI:
+      return {
+        ...state,
+        chats: state.chats.map((chat) => {
+          if (chat.isActive) {
+            return {
+              ...chat,
+              newMessage: `${chat.newMessage} ${action.smile}`
             }
           }
           return chat

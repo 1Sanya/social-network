@@ -1,8 +1,10 @@
 import {
-  DialogsAT,
+  addEmojiACT,
   AddNewMessageACT,
+  DialogsAT,
   setActiveChatACT,
-  setActiveFolderACT, setNewMessageACT,
+  setActiveFolderACT,
+  setNewMessageACT,
 } from '../../Types/DialogsT'
 
 export const setActiveFolderAC = (id: number):setActiveFolderACT => ({
@@ -24,4 +26,10 @@ export const setNewMessageAC = (newText: string, id: number):setNewMessageACT =>
 export const addNewMessageAC = (id: number):AddNewMessageACT => ({
   type: DialogsAT.ADD_NEW_MESSAGE,
   id
+})
+
+export const addEmojiAC = (id:number, smile: string):addEmojiACT => ({
+  type: DialogsAT.ADD_EMOJI,
+  id,
+  smile
 })
