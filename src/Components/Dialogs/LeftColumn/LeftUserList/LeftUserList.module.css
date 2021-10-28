@@ -10,6 +10,20 @@
   cursor: pointer;
 }
 
+.wrapper {
+  overflow-y: scroll;
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 3px;
+  background: transparent;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: #3F3F3F;
+  outline: 1px solid #3F3F3F;
+}
+
 .active {
   background-color: #8774E1;
 }
