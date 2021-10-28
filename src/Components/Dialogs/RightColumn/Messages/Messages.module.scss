@@ -2,9 +2,13 @@
   display: flex;
   flex-direction: column-reverse;
   background-color: #181718;
-  height: 86vh;
+  height: 78vh;
   padding-bottom: 2vh;
   overflow-y: scroll;
+
+  @media (min-width: 1280px) {
+    height: 86vh;
+  }
 }
 
 .wrapper::-webkit-scrollbar {

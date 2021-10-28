@@ -43,13 +43,17 @@ const initialState: DialogsT = {
       messages: [
         {
           id: 1,
-          content: 'Go bratan',
-          sendByMe: true
+          content: 'https://betzona.ru/uploads/sportnews/1598460139_ee0dc655da02e88747edcd64313856a3.png',
+          sendByMe: true,
+          isImage: true,
+          isSticker: false
         },
         {
           id: 2,
           content: 'Sanya, go fotball',
-          sendByMe: false
+          sendByMe: false,
+          isImage: false,
+          isSticker: false
         }
       ],
       lastMessage: '',
@@ -179,11 +183,13 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
                 {
                   id: chat.messages?.length,
                   sendByMe: true,
-                  content: chat.newMessage
+                  content: chat.newMessage,
+                  isImage: action.isImage,
+                  isSticker: action.isSticker
                 },
                 ...chat.messages!,
               ],
-              lastMessage: chat.newMessage,
+              lastMessage: action.isSticker ? 'Sticker' : action.isImage ? 'Image' : chat.newMessage,
               newMessage: ''
             }
           }
@@ -204,18 +210,19 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
         })
       }
     case DialogsAT.SET_LAST_MESSAGE:
-      return {
+      return <DialogsT>{
         ...state,
         chats: state.chats.map((chat) => {
           if (chat.id === action.id) {
             return {
               ...chat,
-              lastMessage: action.content
+              lastMessage: action.isImage ? 'Image' : action.isSticker ? 'Sticker' : action.content
             }
           }
           return chat
         })
       }
+
     default:
       return {
         ...state

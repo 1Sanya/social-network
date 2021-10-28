@@ -23,9 +23,14 @@ export const setNewMessageAC = (newText: string, id: number):setNewMessageACT =>
   id
 })
 
-export const addNewMessageAC = (id: number):AddNewMessageACT => ({
+export const addNewMessageAC = (
+  id: number, isImage: boolean, isSticker: boolean, contentUrl: string | null
+):AddNewMessageACT => ({
   type: DialogsAT.ADD_NEW_MESSAGE,
-  id
+  id,
+  isImage,
+  isSticker,
+  contentUrl
 })
 
 export const addEmojiAC = (id:number, smile: string):addEmojiACT => ({
@@ -34,8 +39,12 @@ export const addEmojiAC = (id:number, smile: string):addEmojiACT => ({
   smile
 })
 
-export const setLastMessageAC = (id:number, content: string):setLastMessageACT => ({
+export const setLastMessageAC = (
+  id: number, content: string | null, isImage: boolean, isSticker: boolean
+):setLastMessageACT => ({
   type: DialogsAT.SET_LAST_MESSAGE,
   id,
-  content
+  content,
+  isImage,
+  isSticker
 })

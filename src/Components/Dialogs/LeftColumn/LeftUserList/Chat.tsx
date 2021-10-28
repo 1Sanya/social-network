@@ -2,14 +2,21 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import s from './LeftUserList.module.css'
 import { setLastMessageAC } from '../../../../Redux/action-creators/DialogsAC'
+import { DialogsChatsT } from '../../../../Types/DialogsT'
 
-export const Chat = (props:any) => {
+export const Chat = (props:DialogsChatsT) => {
   const dispatch = useDispatch()
+  const {
+    id, newMessage, img, lastMessage, isActive,
+    activeChatToggle, folders, messages, name
+  } = props
   useEffect(() => {
     try {
-      dispatch(setLastMessageAC(props.id, props.messages[0].content))
+      dispatch(setLastMessageAC(
+        id!, messages![0].content, messages![0].isImage, messages![0].isSticker
+      ))
     } catch (e) {
-      dispatch(setLastMessageAC(props.id, ''))
+      dispatch(setLastMessageAC(id!, '', false, false))
     }
   }, [])
   return (
