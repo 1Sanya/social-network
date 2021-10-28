@@ -6,6 +6,7 @@
 }
 
 .input {
+  margin: 0 20px 0 30px;
   padding: 17px 17px 17px 44px;
   height: 19px;
   width: 67%;
@@ -13,7 +14,7 @@
   color: #fff;
   background-color: #212121;
   border-radius: 10px;
-  margin: 0 20px 0 30px;
+  cursor: text;
   &:focus {
     outline:none;
   }
@@ -27,7 +28,11 @@
 .button.smile {
   position: absolute;
   margin: 10px 10px 10px 40px;
+}
 
+.button.paperClip {
+  position: absolute;
+  margin: 10px 10px 10px 400px;
 }
 
 .button.send {
@@ -45,7 +50,7 @@
   color: #fff;
 }
 
-.smilesIcon {
+.smilesIcon, {
   color: #7f7f7f;
   transition: color .2s linear;
   width: 1.3em;
@@ -55,8 +60,74 @@
   }
 }
 
+.paperClipIcon {
+  color: #7f7f7f;
+  transition: color .2s linear;
+  width: 1.5em;
+  height: 1.5em;
+  &:hover {
+    color: #8774E1;
+  }
+}
+
+.button.paperClip:hover  + .bubbleMenuWrapper {
+  display: flex;
+}
+.bubbleMenuWrapper:hover {
+  display: flex;
+}
+.bubbleMenuWrapper {
+  display: none;
+  flex-direction: row-reverse;
+  position: absolute;
+  margin: -140px 10px 17px 250px;
+  width: 180px;
+  height: 170px;
+}
+
+.bubbleMenu {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 180px;
+  height: 130px;
+  background-color: #212121;
+  border-radius: 10px;
+}
+
+.bubbleMenuItem {
+  display: flex;
+  align-items: center;
+  border: 0;
+  border-radius: 4px;
+  width: 180px;
+  height: 55px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: left;
+  background-color: #212121;
+  &:hover {
+    background-color: #2c2c2c;
+  }
+}
+
+.bubbleIcon {
+  margin-right: 10px;
+  color: #aaa;
+  width: 1.2em;
+  height: 1.2em;
+}
+
 .sendIcon {
   color: #8774E1;
   width: 1.3em;
   height: 1.3em;
 }
+
+.trampleyWrapper {
+  background-color: #181718;
+  height: 200px;
+}
+
+

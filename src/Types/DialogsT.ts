@@ -7,7 +7,7 @@ export type DialogsT = {
   users: Array<usersT>,
   folders:Array<DialogFoldersT>,
   chats: Array<DialogsChatsT>,
-  activeChat: any
+  activeChat: number | null
 }
 
 export type DialogFoldersT = {
@@ -17,18 +17,28 @@ export type DialogFoldersT = {
 }
 
 export type DialogsChatsT = {
-  id: number,
-  name: string,
-  img: string,
+  id?: number,
+  name?: string,
+  img?: string,
   folders?: Array<number> | number | null,
   isActive?: boolean,
-  activeChatToggle?: (id: number) => void
+  activeChatToggle?: (id: number) => void,
+  newMessage?: string,
+  messages?: Array<messagesT>
+}
+
+export type messagesT = {
+  id: number,
+  sendByMe: boolean,
+  content: string
 }
 
 export enum DialogsAT {
   SET_ACTIVE_FOLDER = 'SET_ACTIVE_FOLDER',
   SET_ACTIVE_CHAT = 'SET_ACTIVE_CHAT',
-  GET_ACTIVE_CHAT = 'GET_ACTIVE_CHAT'
+  GET_ACTIVE_CHAT = 'GET_ACTIVE_CHAT',
+  SET_NEW_MESSAGE = 'SET_NEW_MESSAGE',
+  ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE'
 }
 
 export type setActiveFolderACT = {
@@ -41,10 +51,18 @@ export type setActiveChatACT = {
   id: number
 }
 
-export type getActiveChatACT = {
-  type: DialogsAT.GET_ACTIVE_CHAT
+export type setNewMessageACT = {
+  type: DialogsAT.SET_NEW_MESSAGE,
+  newText: string,
+  id: number
+}
+
+export type AddNewMessageACT = {
+  type: DialogsAT.ADD_NEW_MESSAGE,
+  id: number
 }
 
 export type DialogsACT = setActiveFolderACT |
   setActiveChatACT |
-  getActiveChatACT
+  setNewMessageACT |
+  AddNewMessageACT
