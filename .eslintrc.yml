@@ -36,6 +36,10 @@ rules: {
   'jsx-a11y/click-events-have-key-events': 'off',
   'no-plusplus': 'off',
   'jsx-a11y/anchor-is-valid': 'off',
-  'react/prop-types': "off"
-
+  'react/prop-types': "off",
+  'array-callback-return': "off",
+  'consistent-return': "off",
+  "linebreak-style": 0,
+  "global-require": 0,
+  "eslint linebreak-style": [ 0, "error", "windows" ]
 }
