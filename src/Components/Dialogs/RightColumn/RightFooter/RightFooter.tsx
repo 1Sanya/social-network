@@ -32,7 +32,7 @@ const RightFooter = () => {
     })
     const handleKeyDown = (event:any) => {
       if (event.key === 'Enter') {
-        dispatch(addNewMessageAC(id!))
+        dispatch(addNewMessageAC(id!, false, false, null))
       }
     }
     return (
@@ -75,7 +75,7 @@ const RightFooter = () => {
             </button>
           </div>
         </div>
-        <button onClick={() => dispatch(addNewMessageAC(id!))} className={`${s.button} ${s.send}`}>
+        <button onClick={() => dispatch(addNewMessageAC(id!, false, false, null))} className={`${s.button} ${s.send}`}>
           <MdSend className={s.sendIcon} />
         </button>
       </div>

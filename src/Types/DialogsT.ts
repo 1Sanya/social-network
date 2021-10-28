@@ -37,7 +37,9 @@ export type emojiT = {
 export type messagesT = {
   id: number,
   sendByMe: boolean,
-  content: string
+  content: string,
+  isImage: boolean,
+  isSticker: boolean
 }
 
 export enum DialogsAT {
@@ -47,7 +49,8 @@ export enum DialogsAT {
   SET_NEW_MESSAGE = 'SET_NEW_MESSAGE',
   ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE',
   ADD_EMOJI = 'ADD_EMOJI',
-  SET_LAST_MESSAGE = 'SET_LAST_MESSAGE'
+  SET_LAST_MESSAGE = 'SET_LAST_MESSAGE',
+  SEND_STICKER = 'SEND_STICKER',
 }
 
 export type setActiveFolderACT = {
@@ -68,7 +71,10 @@ export type setNewMessageACT = {
 
 export type AddNewMessageACT = {
   type: DialogsAT.ADD_NEW_MESSAGE,
-  id: number
+  id: number,
+  isImage: boolean,
+  isSticker: boolean,
+  contentUrl: null | string
 }
 
 export type addEmojiACT = {
@@ -80,9 +86,16 @@ export type addEmojiACT = {
 export type setLastMessageACT = {
   type: DialogsAT.SET_LAST_MESSAGE,
   id: number,
-  content: string
+  isImage: boolean,
+  isSticker: boolean,
+  content: string | null
 }
 
+export type sendStickerACT = {
+  type: DialogsAT.SEND_STICKER,
+  id: number,
+  content: string
+}
 export type DialogsACT = setActiveFolderACT |
   setActiveChatACT |
   setNewMessageACT |

@@ -1,6 +1,6 @@
 import React from 'react'
 import Message from './Message'
-import s from './Messages.module.css'
+import s from './Messages.module.scss'
 import { useTypedSelector } from '../../../../hooks/hooks'
 
 const Messages = () => {
@@ -10,9 +10,11 @@ const Messages = () => {
       return (
         chat.messages!.map((message) => (
           <Message
+            isSticker={message.isSticker}
             id={message.id}
             sendByMe={message.sendByMe}
             content={message.content}
+            isImage={message.isImage}
           />
         ))
       )
