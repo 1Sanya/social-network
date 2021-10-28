@@ -1,6 +1,5 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import Emoji from 'a11y-react-emoji/lib/Emoji'
 import {
   AiOutlinePaperClip,
   CgFile,
@@ -44,11 +43,12 @@ const RightFooter = () => {
         <div className={s.stickersBubbleMenuWrapper}>
           <div className={s.stickersBubbleMenu}>
             {emoji.map((smile) => (
-              <Emoji
+              <span
                 onClick={() => dispatch(addEmojiAC(Number(id), smile.smile))}
                 className={s.emoji}
-                symbol={smile.smile}
-              />
+              >
+                {smile.smile}
+              </span>
             ))}
           </div>
         </div>

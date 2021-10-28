@@ -3,7 +3,7 @@ import {
   AddNewMessageACT,
   DialogsAT,
   setActiveChatACT,
-  setActiveFolderACT,
+  setActiveFolderACT, setLastMessageACT,
   setNewMessageACT,
 } from '../../Types/DialogsT'
 
@@ -32,4 +32,10 @@ export const addEmojiAC = (id:number, smile: string):addEmojiACT => ({
   type: DialogsAT.ADD_EMOJI,
   id,
   smile
+})
+
+export const setLastMessageAC = (id:number, content: string):setLastMessageACT => ({
+  type: DialogsAT.SET_LAST_MESSAGE,
+  id,
+  content
 })
