@@ -7,7 +7,8 @@ export type DialogsT = {
   users: Array<usersT>,
   folders:Array<DialogFoldersT>,
   chats: Array<DialogsChatsT>,
-  activeChat: number | null
+  activeChat: number | null,
+  emoji: Array<emojiT>
 }
 
 export type DialogFoldersT = {
@@ -24,7 +25,13 @@ export type DialogsChatsT = {
   isActive?: boolean,
   activeChatToggle?: (id: number) => void,
   newMessage?: string,
-  messages?: Array<messagesT>
+  messages?: Array<messagesT>,
+  lastMessage?: string
+}
+
+export type emojiT = {
+  id: number | undefined,
+  smile: string
 }
 
 export type messagesT = {
@@ -38,7 +45,9 @@ export enum DialogsAT {
   SET_ACTIVE_CHAT = 'SET_ACTIVE_CHAT',
   GET_ACTIVE_CHAT = 'GET_ACTIVE_CHAT',
   SET_NEW_MESSAGE = 'SET_NEW_MESSAGE',
-  ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE'
+  ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE',
+  ADD_EMOJI = 'ADD_EMOJI',
+  SET_LAST_MESSAGE = 'SET_LAST_MESSAGE'
 }
 
 export type setActiveFolderACT = {
@@ -62,7 +71,21 @@ export type AddNewMessageACT = {
   id: number
 }
 
+export type addEmojiACT = {
+  type: DialogsAT.ADD_EMOJI,
+  id: number,
+  smile: string
+}
+
+export type setLastMessageACT = {
+  type: DialogsAT.SET_LAST_MESSAGE,
+  id: number,
+  content: string
+}
+
 export type DialogsACT = setActiveFolderACT |
   setActiveChatACT |
   setNewMessageACT |
-  AddNewMessageACT
+  AddNewMessageACT |
+  addEmojiACT |
+  setLastMessageACT

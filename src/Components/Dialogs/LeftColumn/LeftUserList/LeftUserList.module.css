@@ -1,5 +1,7 @@
 .chatWrapper {
+  border-radius: 10px;
   padding-top: 5px;
+  margin: 0 8px;
   border-bottom: #1f1e1e 1px solid;
   height: 67px;
   display: flex;
@@ -8,8 +10,26 @@
   cursor: pointer;
 }
 
+.wrapper {
+  overflow-y: scroll;
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 3px;
+  background: transparent;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: #3F3F3F;
+  outline: 1px solid #3F3F3F;
+}
+
+.active {
+  background-color: #8774E1;
+}
+
 .img {
-  margin-right: 7px;
+  margin: 0 7px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -29,6 +49,10 @@
 .message {
   color: #707579;
   font-size: 14px;
+}
+
+.message.active {
+  color: #fff;
 }
 
 

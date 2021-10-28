@@ -1,8 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useTypedSelector } from '../../../../hooks/hooks'
-import Chat from './Chat'
 import { setActiveChatAC } from '../../../../Redux/action-creators/DialogsAC'
+import { Chat } from './Chat'
+import s from './LeftUserList.module.css'
 
 const LeftUserList = () => {
   const { chats, folders } = useTypedSelector((state) => state.dialogsPage)
@@ -14,8 +15,11 @@ const LeftUserList = () => {
         if (chat.folders === folder.id) {
           return (
             <Chat
+              lastMessage={chat.lastMessage}
+              messages={chat.messages}
               key={chat.id}
               id={chat.id}
+              isActive={chat.isActive}
               name={chat.name}
               img={chat.img}
               activeChatToggle={() => {
@@ -28,7 +32,7 @@ const LeftUserList = () => {
     }
   })
   return (
-    <div>
+    <div className={s.wrapper}>
       {chatList}
     </div>
   )

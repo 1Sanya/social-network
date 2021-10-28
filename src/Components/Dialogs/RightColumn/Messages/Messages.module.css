@@ -2,6 +2,17 @@
   display: flex;
   flex-direction: column-reverse;
   background-color: #181718;
-  height: 83vh;
+  height: 86vh;
   padding-bottom: 2vh;
+  overflow-y: scroll;
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 3px;
+  background: transparent;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: #3F3F3F;
+  outline: 1px solid #3F3F3F;
 }

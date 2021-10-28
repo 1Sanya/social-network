@@ -8,11 +8,15 @@ import {
   MdSend
 } from 'react-icons/all'
 import s from './RightFooter.module.scss'
-import { addNewMessageAC, setNewMessageAC } from '../../../../Redux/action-creators/DialogsAC'
+import {
+  addEmojiAC,
+  addNewMessageAC,
+  setNewMessageAC,
+} from '../../../../Redux/action-creators/DialogsAC'
 import { useTypedSelector } from '../../../../hooks/hooks'
 
 const RightFooter = () => {
-  const { chats, activeChat } = useTypedSelector((state) => state.dialogsPage)
+  const { chats, activeChat, emoji } = useTypedSelector((state) => state.dialogsPage)
   const dispatch = useDispatch()
 
   if (activeChat) {
@@ -36,6 +40,18 @@ const RightFooter = () => {
         <button className={`${s.button} ${s.smile}`}>
           <FaRegSmile className={s.smilesIcon} />
         </button>
+        <div className={s.stickersBubbleMenuWrapper}>
+          <div className={s.stickersBubbleMenu}>
+            {emoji.map((smile) => (
+              <span
+                onClick={() => dispatch(addEmojiAC(Number(id), smile.smile))}
+                className={s.emoji}
+              >
+                {smile.smile}
+              </span>
+            ))}
+          </div>
+        </div>
         <input
           className={s.input}
           value={newMessage}
@@ -47,14 +63,14 @@ const RightFooter = () => {
         <button className={`${s.button} ${s.paperClip}`}>
           <AiOutlinePaperClip className={s.paperClipIcon} />
         </button>
-        <div className={s.bubbleMenuWrapper}>
-          <div className={s.bubbleMenu}>
-            <button className={s.bubbleMenuItem}>
-              <IoMdPhotos className={s.bubbleIcon} />
+        <div className={s.addFileBubbleMenuWrapper}>
+          <div className={s.addFileBubbleMenu}>
+            <button className={s.addFileBubbleMenuItem}>
+              <IoMdPhotos className={s.addFileBubbleIcon} />
               Photo or video
             </button>
-            <button className={s.bubbleMenuItem}>
-              <CgFile className={s.bubbleIcon} />
+            <button className={s.addFileBubbleMenuItem}>
+              <CgFile className={s.addFileBubbleIcon} />
               File
             </button>
           </div>
