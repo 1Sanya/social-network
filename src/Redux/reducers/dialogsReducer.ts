@@ -1,28 +1,6 @@
 import { DialogsACT, DialogsAT, DialogsT } from '../../Types/DialogsT'
 
 const initialState: DialogsT = {
-  users: [
-    {
-      id: 1,
-      name: 'Sanya',
-    },
-    {
-      id: 2,
-      name: 'Sofia',
-    },
-    {
-      id: 3,
-      name: 'Zed',
-    },
-    {
-      id: 4,
-      name: 'Yi',
-    },
-    {
-      id: 5,
-      name: 'Tom',
-    },
-  ],
   folders: [
     { id: 1, text: 'my', isActive: true },
     { id: 2, text: 'work', isActive: false },
@@ -42,14 +20,14 @@ const initialState: DialogsT = {
       isActive: false,
       messages: [
         {
-          id: 1,
+          id: 0,
           content: 'https://betzona.ru/uploads/sportnews/1598460139_ee0dc655da02e88747edcd64313856a3.png',
           sendByMe: true,
           isImage: true,
           isSticker: false
         },
         {
-          id: 2,
+          id: 1,
           content: 'Sanya, go fotball',
           sendByMe: false,
           isImage: false,
@@ -112,16 +90,80 @@ const initialState: DialogsT = {
   ],
   activeChat: null,
   emoji: [
-    { smile: '🐑', id: 1 },
-    { smile: '✌️', id: 2 },
-    { smile: '😌', id: 3 },
-    { smile: '😍', id: 4 },
-    { smile: '🥰', id: 5 },
-    { smile: '😒', id: 6 },
-    { smile: '🤡', id: 7 },
-    { smile: '😡', id: 8 },
-    { smile: '😶', id: 9 }
-  ]
+    {
+      name: 'Smileys & people',
+      isActive: true,
+      smiles: [
+        '😀', '😄', '🤣', '😂', '🙂', '🙃', '😉', '😇', '🥰', '😍', '😘', '😗', '☺', '😚', '😙', '😋', '😛', '🤭', '🤨', '😐', '😑', '😶', '😏',
+        '😒', '🙄', '😬', '😌', '😔', '😪', '🤤', '😴', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '🥵', '🥶', '🥴', '😮', '😠', '😖', '😤', '🥱',
+        '😡', '💩', '🤡', '😻', '😽', '💖', '💝', '💘', '❤', '🧡', '💛', '💚', '💙', '💜', '🤎', '👋', '👌', '🤘', '👆', '☝', '👍', '👎', '🤛', '🤜',
+      ]
+    },
+    {
+      name: 'abc',
+      isActive: false,
+      smiles: [
+        '😀', '😄', '🤣', '😂', '🙂', '🙃', '😉', '😇', '🥰', '😍', '😘', '😗', '☺', '😚', '😙', '😋', '😛', '🤭', '🤨', '😐', '😑', '😶', '😏',
+        '😒', '🙄', '😬', '😌', '😔', '😪', '🤤', '😴', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '🥵', '🥶', '🥴', '😮', '😠', '😖', '😤', '🥱',
+        '😡', '💩', '🤡', '😻', '😽', '💖', '💝', '💘', '❤', '🧡', '💛', '💚', '💙', '💜', '🤎', '👋', '👌', '🤘', '👆', '☝', '👍', '👎', '🤛', '🤜',
+      ]
+    },
+  ],
+  stickers: [
+    {
+      name: 'НУ СТИКЕРЫ И СТИКЕРЫ',
+      isActive: true,
+      pacPictureUrl: 'blob:https://web.telegram.org/41520a24-d646-4b46-bc42-36ed7f3eb69b',
+      stickers: [
+        'https://cs12.pikabu.ru/post_img/2020/12/12/6/og_og_160776023122585385.jpg',
+        'blob:https://web.telegram.org/59d433b9-1076-4f1b-8043-9b5fc6a0f53f',
+        'blob:https://web.telegram.org/ce189d44-9630-4727-9f1a-8fb1776131fe',
+        'blob:https://web.telegram.org/f1416a7a-d295-4feb-9bfe-19c885d522bf',
+        'blob:https://web.telegram.org/64539646-83e7-4ae7-9cd1-802ffd1f17a6',
+        'blob:https://web.telegram.org/7036d72e-70f8-48bf-ab41-4a3459933cd9',
+        'blob:https://web.telegram.org/93a795b0-09b7-4eb8-a89b-a4cc42c62b61'
+      ]
+    },
+    {
+      name: 'Мне срочно нужно котяры',
+      isActive: true,
+      pacPictureUrl: 'blob:https://web.telegram.org/3a381c2f-4e70-46d1-a4e7-c914a77e3ee9',
+      stickers: [
+        'https://cs11.pikabu.ru/post_img/2019/05/01/12/og_og_1556741130299254066.jpg',
+        'https://pbs.twimg.com/media/Ew8qR3oWYAMO7R0.jpg',
+        'blob:https://web.telegram.org/4db43fbc-11ae-45db-99e5-1d5b1a3615ae',
+        'blob:https://web.telegram.org/58ab03db-d270-4797-bd89-19fdd2e025eb',
+        'blob:https://web.telegram.org/174e27a2-decb-410e-98f9-7e9c04afe222',
+        'blob:https://web.telegram.org/1d80bb69-7abc-45a9-beb5-368320c9f33c',
+        'blob:https://web.telegram.org/c5d0704b-40ab-41c6-9175-f03ade1d219a'
+      ]
+    },
+    {
+      name: 'Школьный психолог',
+      isActive: true,
+      pacPictureUrl: 'blob:https://web.telegram.org/25a14236-cb69-4f73-a22c-81da9cdd7079',
+      stickers: [
+        'blob:https://web.telegram.org/d6f717f5-3ab2-48e6-a1b2-b975869b9be8',
+        'blob:https://web.telegram.org/3ac265e9-d404-4b99-b7c8-a1d721b5c8f5',
+        'blob:https://web.telegram.org/4e9c038c-96d4-4f7d-b795-9923026cf2db',
+        'blob:https://web.telegram.org/f978f30d-0dc8-4c8f-8b1f-e72836c1fad2',
+        'blob:https://web.telegram.org/a38810cc-832e-4faf-866a-0d72eff2f661'
+      ]
+    },
+    {
+      name: 'выпрямь спину',
+      isActive: true,
+      pacPictureUrl: 'https://cdn131.picsart.com/312469459029211.png',
+      stickers: [
+        'https://cdn131.picsart.com/312469459029211.png',
+        'blob:https://web.telegram.org/50ecb4d1-ff52-4c9c-b56d-21b3d5e1594d',
+        'blob:https://web.telegram.org/e5ae6c01-3265-48f3-a0df-e6fdd278d255',
+        'blob:https://web.telegram.org/80513440-2a4f-465c-a0bf-add6593510ac',
+        'blob:https://web.telegram.org/0f7b732f-b85e-4f36-838f-0c32d98c1f61',
+      ]
+    }
+  ],
+  isEmojiSelected: true
 }
 
 const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):DialogsT => {
@@ -203,7 +245,7 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
           if (chat.isActive) {
             return {
               ...chat,
-              newMessage: `${chat.newMessage} ${action.smile}`
+              newMessage: `${chat.newMessage}${action.smile}`
             }
           }
           return chat
@@ -222,7 +264,33 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
           return chat
         })
       }
-
+    case DialogsAT.SEND_STICKER:
+      return <DialogsT>{
+        ...state,
+        chats: state.chats.map((chat) => {
+          if (chat.isActive) {
+            return {
+              ...chat,
+              messages: [
+                {
+                  id: chat.messages?.length,
+                  sendByMe: true,
+                  content: action.stickerUrl,
+                  isImage: false,
+                  isSticker: true
+                },
+                ...chat.messages!
+              ]
+            }
+          }
+          return chat
+        })
+      }
+    case DialogsAT.EMOJI_STICKER_TOGGLE:
+      return {
+        ...state,
+        isEmojiSelected: action.isEmojiSelected,
+      }
     default:
       return {
         ...state

@@ -5,24 +5,36 @@
 }
 
 .message {
-  color: #fff;
-  padding: 5px;
-  border-radius: 10px;
+  display: flex;
   height: fit-content;
+  max-width: 350px;
 }
 
-.messageByMe {
+.alignRight {
   align-self: flex-end;
-  border: 1px #8774E1 solid;
-  background-color: #8774E1;
 }
 
-.messageByCompanion {
+.alignLeft {
   align-self: flex-start;
-  border: 1px #212121 solid;
-  background-color: #212121;
 }
 
 .img {
   max-width: 200px;
+}
+
+.myMessage {
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  word-break: break-all;
+  border: 1px #8774E1 solid;
+  background-color: #8774E1;
+}
+
+.companionMessage {
+  border: 1px #212121 solid;
+  background-color: #212121;
+  color: #e0dbdb;
+  border-radius: 10px;
+  padding: 5px;
 }

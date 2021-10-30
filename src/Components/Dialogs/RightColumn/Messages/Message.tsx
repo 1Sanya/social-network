@@ -7,12 +7,14 @@ const Message:FC<messagesT> = (props) => {
     sendByMe,
     id,
     content,
-    isImage
+    isImage,
+    isSticker
   } = props
   return (
     <div className={s.wrapper}>
-      <div className={sendByMe ? `${s.messageByMe} ${s.message}` : `${s.messageByCompanion} ${s.message}`}>
-        {!isImage ? content : <img className={s.img} src={content} alt="" />}
+      <div className={sendByMe ? `${s.alignRight} ${s.message}` : `${s.AlignLeft} ${s.message}`}>
+        {isImage || isSticker ? <img className={s.img} src={content} alt="" />
+          : <div className={sendByMe ? s.myMessage : s.companionMessage}>{content}</div>}
       </div>
     </div>
   )

@@ -3,29 +3,85 @@
   display: flex;
   align-items: center;
   background-color: #181718;
+  overflow: hidden;
 }
 
-.stickersBubbleMenuWrapper {
+.stickersWrapper {
   display: none;
-  flex-direction: row-reverse;
   position: absolute;
-  margin: 0 10px 65px 35px;
-  width: 240px;
-  height: 75px;
+  bottom: 0;
+  margin-left: 30px;
+  padding-bottom: 20px;
+  width: 300px;
+  height: 300px;
+  background-color: gray;
 }
 
-.stickersBubbleMenu {
-  padding: 0 5px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 240px;
-  height: 35px;
+.stickersMenu {
+  background-color: green;
+  width: 280px;
+  height: 270px;
+}
+
+.stickersBubbleSubNav {
   background-color: #212121;
-  border-radius: 10px;
+  border-bottom: 1px solid #191919;
+  height: 30px;
+  width: 260px;
 }
 
-.emoji {
+.stickersBubbleContent {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  width: 260px;
+  height: 190px;
+  background-color: #212121;
+}
+
+.stickersBubbleContent::-webkit-scrollbar {
+  width: 2px;
+  background: transparent;
+}
+
+.stickersBubbleContent::-webkit-scrollbar-thumb {
+  background-color: #3F3F3F;
+  outline: 1px solid #3F3F3F;
+}
+
+.stickersBubbleNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+  border-top: 1px solid #191919;
+  height: 40px;
+  width: 260px;
+}
+
+.stickerNavIcon {
+  color: #7f7f7f;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.navButton {
+  border: 0;
+  background-color: #212121;
+  cursor: pointer;
+  &:first-child {
+    margin-right: 10px;
+  }
+}
+
+
+.stickerNavIcon.active {
+  color: #8774E1;
+  padding: 5px;
+  background: #8774E1;
+}
+
+.stickersBubbleItem {
   padding: 3px;
   border-radius: 3px;
   cursor: pointer;
@@ -34,10 +90,11 @@
   }
 }
 
-.button.smile:hover  + .stickersBubbleMenuWrapper {
+.button.smile:hover + .stickersWrapper {
   display: flex;
 }
-.stickersBubbleMenuWrapper:hover {
+
+.stickersWrapper:hover {
   display: flex;
 }
 
@@ -106,13 +163,13 @@
   }
 }
 
-.button.paperClip:hover  + .addFileBubbleMenuWrapper {
+.button.paperClip:hover  + .addFileWrapper {
   display: flex;
 }
-.addFileBubbleMenuWrapper:hover {
+.addFileWrapper:hover {
   display: flex;
 }
-.addFileBubbleMenuWrapper {
+.addFileWrapper {
   display: none;
   flex-direction: row-reverse;
   position: absolute;
