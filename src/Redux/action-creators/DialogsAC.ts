@@ -4,9 +4,9 @@ import {
   DialogsAT, emojiStickerToggleACT,
   sendStickerACT,
   setActiveChatACT,
-  setActiveFolderACT,
+  setActiveFolderACT, setEmojiPackACT,
   setLastMessageACT,
-  setNewMessageACT,
+  setNewMessageACT, setStickerPackACT,
 } from '../../Types/DialogsT'
 
 export const setActiveFolderAC = (id: number):setActiveFolderACT => ({
@@ -52,6 +52,12 @@ export const setLastMessageAC = (
 
 export const sendStickerAC = (stickerUrl: string)
   :sendStickerACT => ({ type: DialogsAT.SEND_STICKER, stickerUrl })
+
+export const setEmojiPacAC = (id: number)
+  :setEmojiPackACT => ({ type: DialogsAT.SET_EMOJI_PACK, id })
+
+export const setStickerPacAC = (id: number)
+  :setStickerPackACT => ({ type: DialogsAT.SET_STICKER_PACK, id })
 
 export const emojiStickerToggleAC = (isEmojiSelected: boolean)
   :emojiStickerToggleACT => ({ type: DialogsAT.EMOJI_STICKER_TOGGLE, isEmojiSelected })

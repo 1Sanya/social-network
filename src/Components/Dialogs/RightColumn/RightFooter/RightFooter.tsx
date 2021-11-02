@@ -11,14 +11,18 @@ import {
 import s from './RightFooter.module.scss'
 import {
   addEmojiAC,
-  addNewMessageAC, emojiStickerToggleAC,
+  addNewMessageAC,
+  emojiStickerToggleAC,
+  sendStickerAC,
+  setEmojiPacAC,
   setNewMessageAC,
+  setStickerPacAC,
 } from '../../../../Redux/action-creators/DialogsAC'
 import { useTypedSelector } from '../../../../hooks/hooks'
 
 const RightFooter = () => {
   const {
-    chats, activeChat, emoji, stickers, isEmojiSelected
+    chats, activeChat, emoji, stickers, isEmojiSelected, activeEmojiPac
   } = useTypedSelector((state) => state.dialogsPage)
   const dispatch = useDispatch()
 
@@ -46,22 +50,79 @@ const RightFooter = () => {
 
         <div className={s.stickersWrapper}>
           <div className={s.stickersMenu}>
-            <div className={s.stickersBubbleSubNav}>a</div>
+            <div className={s.stickersBubbleSubNav}>
+              { isEmojiSelected
+                ? emoji.map((emojiPac, i) => (
+                  <div onClick={() => {
+                    dispatch(setEmojiPacAC(i + 1))
+                  }}
+                  >
+                    <img className={emojiPac.isActive ? `${s.stickerNavIcon} ${s.selected}` : s.stickerNavIcon} src={emojiPac.pacIcon} alt="" />
+                  </div>
+                ))
+                : stickers.map((stickerPac, i) => (
+                  <div onClick={() => {
+                    dispatch(setStickerPacAC(i + 1))
+                  }}
+                  >
+                    <img className={stickerPac.isActive ? `${s.stickerNavIcon} ${s.selected}` : s.stickerNavIcon} src={stickerPac.pacPictureUrl} alt="" />
+                  </div>
+                ))}
+            </div>
             <div className={s.stickersBubbleContent}>
-              {emoji.map((emojiPac) => {
-                if (emojiPac.isActive) {
-                  return (
-                    emojiPac.smiles.map((smile) => (
-                      <span
-                        onClick={() => dispatch(addEmojiAC(smile))}
-                        className={s.stickersBubbleItem}
-                      >
-                        {smile}
-                      </span>
-                    ))
-                  )
-                }
-              })}
+              {isEmojiSelected
+                ? activeEmojiPac
+                  ? emoji.map((emojiPac, i) => {
+                    if (i + 1 === activeEmojiPac) {
+                      return (
+                        <div className={s.emojiPacWrapper}>
+                          <div className={s.emojiPacName}>
+                            {emojiPac.name}
+                          </div>
+                          {emojiPac.smiles.map((smile) => (
+                            <span
+                              onClick={() => dispatch(addEmojiAC(smile))}
+                              className={s.stickersBubbleItem}
+                            >
+                              {smile}
+                            </span>
+                          ))}
+                        </div>
+                      )
+                    }
+                  })
+                  : emoji.map((emojiPac) => (
+                    <div className={s.emojiPacWrapper}>
+                      <div className={s.emojiPacName}>
+                        {emojiPac.name}
+                      </div>
+                      {emojiPac.smiles.map((smile) => (
+                        <span
+                          onClick={() => dispatch(addEmojiAC(smile))}
+                          className={s.singleEmoji}
+                        >
+                          {smile}
+                        </span>
+                      ))}
+                    </div>
+
+                  ))
+                : stickers.map((stickersPac) => (
+                  <div className={s.emojiPacWrapper}>
+                    <div className={s.emojiPacName}>
+                      {stickersPac.name}
+                    </div>
+                    {stickersPac.stickers.map((sticker) => (
+                      <img
+                        onClick={() => dispatch(sendStickerAC(sticker))}
+                        className={s.singleSticker}
+                        src={sticker}
+                        alt=""
+                      />
+                    ))}
+                  </div>
+
+                ))}
             </div>
             <div className={s.stickersBubbleNav}>
               <div>
@@ -75,7 +136,7 @@ const RightFooter = () => {
                   className={s.navButton}
                   onClick={() => dispatch(emojiStickerToggleAC(false))}
                 >
-                  <BiSticker className={isEmojiSelected ? `${s.stickerNavIcon} ${s.active}` : s.stickerNavIcon} />
+                  <BiSticker className={!isEmojiSelected ? `${s.stickerNavIcon} ${s.active}` : s.stickerNavIcon} />
                 </button>
               </div>
             </div>
@@ -115,3 +176,13 @@ const RightFooter = () => {
 }
 
 export default RightFooter
+
+// emoji.packs.map((emojiPac) => {
+//   if (emojiPac.isActive) {
+//     return (
+//     )
+//   } else: return ""
+//
+//   return (
+//   )
+// })

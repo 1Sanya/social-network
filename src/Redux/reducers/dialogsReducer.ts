@@ -1,4 +1,19 @@
 import { DialogsACT, DialogsAT, DialogsT } from '../../Types/DialogsT'
+import lebedev1 from '../../assets/stickers/lebedev/1.webp'
+import lebedev2 from '../../assets/stickers/lebedev/2.webp'
+import lebedev3 from '../../assets/stickers/lebedev/3.webp'
+import lebedev4 from '../../assets/stickers/lebedev/4.webp'
+import lebedev5 from '../../assets/stickers/lebedev/5.webp'
+import lebedev6 from '../../assets/stickers/lebedev/6.webp'
+import lebedev7 from '../../assets/stickers/lebedev/7.webp'
+import kot1 from '../../assets/stickers/kotyara/1.webp'
+import kot2 from '../../assets/stickers/kotyara/2.webp'
+import kot3 from '../../assets/stickers/kotyara/3.webp'
+import kot4 from '../../assets/stickers/kotyara/4.webp'
+import hova1 from '../../assets/stickers/hova/1.webp'
+import hova2 from '../../assets/stickers/hova/2.webp'
+import hova3 from '../../assets/stickers/hova/3.webp'
+import hova4 from '../../assets/stickers/hova/4.webp'
 
 const initialState: DialogsT = {
   folders: [
@@ -89,77 +104,76 @@ const initialState: DialogsT = {
     },
   ],
   activeChat: null,
+  activeEmojiPac: null,
+  activeStickerPac: null,
   emoji: [
     {
       name: 'Smileys & people',
-      isActive: true,
+      pacIcon: 'https://cdn.shopify.com/s/files/1/1061/1924/files/Blow_Kiss_Emoji.png?8026536574188759287',
+      isActive: false,
       smiles: [
-        '😀', '😄', '🤣', '😂', '🙂', '🙃', '😉', '😇', '🥰', '😍', '😘', '😗', '☺', '😚', '😙', '😋', '😛', '🤭', '🤨', '😐', '😑', '😶', '😏',
+        '😀', '😄', '🤣', '😂', '🙂', '🙃', '😉', '😇', '🥰', '😍', '😘', '😗', '😚', '😙', '😋', '😛', '🤭', '🤨', '😐', '😑', '😶', '😏',
         '😒', '🙄', '😬', '😌', '😔', '😪', '🤤', '😴', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '🥵', '🥶', '🥴', '😮', '😠', '😖', '😤', '🥱',
         '😡', '💩', '🤡', '😻', '😽', '💖', '💝', '💘', '❤', '🧡', '💛', '💚', '💙', '💜', '🤎', '👋', '👌', '🤘', '👆', '☝', '👍', '👎', '🤛', '🤜',
       ]
     },
     {
-      name: 'abc',
+      name: 'ur friend BD',
+      pacIcon: 'https://learnenglishkids.britishcouncil.org/sites/kids/files/image/RS5227_Birthday%20Cake%20col-web.jpg',
       isActive: false,
       smiles: [
-        '😀', '😄', '🤣', '😂', '🙂', '🙃', '😉', '😇', '🥰', '😍', '😘', '😗', '☺', '😚', '😙', '😋', '😛', '🤭', '🤨', '😐', '😑', '😶', '😏',
-        '😒', '🙄', '😬', '😌', '😔', '😪', '🤤', '😴', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '🥵', '🥶', '🥴', '😮', '😠', '😖', '😤', '🥱',
-        '😡', '💩', '🤡', '😻', '😽', '💖', '💝', '💘', '❤', '🧡', '💛', '💚', '💙', '💜', '🤎', '👋', '👌', '🤘', '👆', '☝', '👍', '👎', '🤛', '🤜',
+        '🎃', '🎄', '🎆', '🧨', '✨', '🎈', '🎉', '🎊', '🎍', '🎋', '🎎', '🎏', '🏅', '🥇', '🥈', '🥉', '🎖'
       ]
+    },
+    {
+      name: 'А ТЫ КТО ПО ЗЗ',
+      pacIcon: 'https://www.idrlabs.com/misc_pictures/true-zodiac-sign-card.png',
+      isActive: false,
+      smiles: [
+        '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓', '⛎'
+      ],
     },
   ],
   stickers: [
     {
       name: 'НУ СТИКЕРЫ И СТИКЕРЫ',
-      isActive: true,
+      isActive: false,
       pacPictureUrl: 'blob:https://web.telegram.org/41520a24-d646-4b46-bc42-36ed7f3eb69b',
       stickers: [
         'https://cs12.pikabu.ru/post_img/2020/12/12/6/og_og_160776023122585385.jpg',
-        'blob:https://web.telegram.org/59d433b9-1076-4f1b-8043-9b5fc6a0f53f',
-        'blob:https://web.telegram.org/ce189d44-9630-4727-9f1a-8fb1776131fe',
-        'blob:https://web.telegram.org/f1416a7a-d295-4feb-9bfe-19c885d522bf',
-        'blob:https://web.telegram.org/64539646-83e7-4ae7-9cd1-802ffd1f17a6',
-        'blob:https://web.telegram.org/7036d72e-70f8-48bf-ab41-4a3459933cd9',
-        'blob:https://web.telegram.org/93a795b0-09b7-4eb8-a89b-a4cc42c62b61'
+        lebedev1,
+        lebedev2,
+        lebedev3,
+        lebedev4,
+        lebedev5,
+        lebedev6,
+        lebedev7,
       ]
     },
     {
       name: 'Мне срочно нужно котяры',
-      isActive: true,
+      isActive: false,
       pacPictureUrl: 'blob:https://web.telegram.org/3a381c2f-4e70-46d1-a4e7-c914a77e3ee9',
       stickers: [
         'https://cs11.pikabu.ru/post_img/2019/05/01/12/og_og_1556741130299254066.jpg',
         'https://pbs.twimg.com/media/Ew8qR3oWYAMO7R0.jpg',
-        'blob:https://web.telegram.org/4db43fbc-11ae-45db-99e5-1d5b1a3615ae',
-        'blob:https://web.telegram.org/58ab03db-d270-4797-bd89-19fdd2e025eb',
-        'blob:https://web.telegram.org/174e27a2-decb-410e-98f9-7e9c04afe222',
-        'blob:https://web.telegram.org/1d80bb69-7abc-45a9-beb5-368320c9f33c',
-        'blob:https://web.telegram.org/c5d0704b-40ab-41c6-9175-f03ade1d219a'
-      ]
-    },
-    {
-      name: 'Школьный психолог',
-      isActive: true,
-      pacPictureUrl: 'blob:https://web.telegram.org/25a14236-cb69-4f73-a22c-81da9cdd7079',
-      stickers: [
-        'blob:https://web.telegram.org/d6f717f5-3ab2-48e6-a1b2-b975869b9be8',
-        'blob:https://web.telegram.org/3ac265e9-d404-4b99-b7c8-a1d721b5c8f5',
-        'blob:https://web.telegram.org/4e9c038c-96d4-4f7d-b795-9923026cf2db',
-        'blob:https://web.telegram.org/f978f30d-0dc8-4c8f-8b1f-e72836c1fad2',
-        'blob:https://web.telegram.org/a38810cc-832e-4faf-866a-0d72eff2f661'
+        kot1,
+        kot2,
+        kot3,
+        kot4,
       ]
     },
     {
       name: 'выпрямь спину',
-      isActive: true,
+      isActive: false,
       pacPictureUrl: 'https://cdn131.picsart.com/312469459029211.png',
       stickers: [
         'https://cdn131.picsart.com/312469459029211.png',
-        'blob:https://web.telegram.org/50ecb4d1-ff52-4c9c-b56d-21b3d5e1594d',
-        'blob:https://web.telegram.org/e5ae6c01-3265-48f3-a0df-e6fdd278d255',
-        'blob:https://web.telegram.org/80513440-2a4f-465c-a0bf-add6593510ac',
-        'blob:https://web.telegram.org/0f7b732f-b85e-4f36-838f-0c32d98c1f61',
+        'https://web.telegram.org/6854e711-a39b-486d-9e5b-653e44adddfd',
+        hova1,
+        hova2,
+        hova3,
+        hova4,
       ]
     }
   ],
@@ -280,7 +294,8 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
                   isSticker: true
                 },
                 ...chat.messages!
-              ]
+              ],
+              lastMessage: 'Sticker'
             }
           }
           return chat
@@ -290,6 +305,40 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
       return {
         ...state,
         isEmojiSelected: action.isEmojiSelected,
+      }
+    case DialogsAT.SET_EMOJI_PACK:
+      return {
+        ...state,
+        activeEmojiPac: action.id === state.activeEmojiPac ? null : action.id,
+        emoji: state.emoji.map((emojiPack, i) => {
+          if (action.id - 1 === i) {
+            return {
+              ...emojiPack,
+              isActive: !emojiPack.isActive
+            }
+          }
+          return {
+            ...emojiPack,
+            isActive: false
+          }
+        })
+      }
+    case DialogsAT.SET_STICKER_PACK:
+      return {
+        ...state,
+        activeStickerPac: action.id === state.activeEmojiPac ? null : action.id,
+        stickers: state.stickers.map((stickerPack, i) => {
+          if (action.id - 1 === i) {
+            return {
+              ...stickerPack,
+              isActive: !stickerPack.isActive
+            }
+          }
+          return {
+            ...stickerPack,
+            isActive: false
+          }
+        })
       }
     default:
       return {

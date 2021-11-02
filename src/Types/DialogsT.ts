@@ -1,10 +1,12 @@
 export type DialogsT = {
   folders:Array<DialogFoldersT>,
   chats: Array<DialogsChatsT>,
-  activeChat: number | null,
-  emoji: Array<emojiPacT>,
+  emoji: Array<emojiPacT>
   stickers: Array<stickerPacT>,
-  isEmojiSelected: boolean
+  isEmojiSelected: boolean,
+  activeChat: number | null,
+  activeEmojiPac: number | null,
+  activeStickerPac: number | null,
 }
 
 export type DialogFoldersT = {
@@ -28,12 +30,8 @@ export type DialogsChatsT = {
 export type emojiPacT = {
   name: string,
   isActive: boolean,
+  pacIcon: string
   smiles: Array<string>
-}
-
-export type emojiT = {
-  id: number,
-  smile: string
 }
 
 export type stickerPacT = {
@@ -60,7 +58,9 @@ export enum DialogsAT {
   ADD_EMOJI = 'ADD_EMOJI',
   SET_LAST_MESSAGE = 'SET_LAST_MESSAGE',
   SEND_STICKER = 'SEND_STICKER',
-  EMOJI_STICKER_TOGGLE = 'EMOJI_STICKER_TOGGLE'
+  EMOJI_STICKER_TOGGLE = 'EMOJI_STICKER_TOGGLE',
+  SET_EMOJI_PACK = 'SET_EMOJI_PACK',
+  SET_STICKER_PACK = 'SET_STICKER_PACK'
 }
 
 export type setActiveFolderACT = {
@@ -110,6 +110,16 @@ export type emojiStickerToggleACT = {
   isEmojiSelected: boolean
 }
 
+export type setEmojiPackACT = {
+  type: DialogsAT.SET_EMOJI_PACK,
+  id: number
+}
+
+export type setStickerPackACT = {
+  type: DialogsAT.SET_STICKER_PACK,
+  id: number
+}
+
 export type DialogsACT = setActiveFolderACT |
   setActiveChatACT |
   setNewMessageACT |
@@ -117,4 +127,6 @@ export type DialogsACT = setActiveFolderACT |
   addEmojiACT |
   setLastMessageACT |
   sendStickerACT |
-  emojiStickerToggleACT
+  emojiStickerToggleACT |
+  setEmojiPackACT |
+  setStickerPackACT
