@@ -1,14 +1,12 @@
-export type usersT = {
-  id: number,
-  name: string,
-}
-
 export type DialogsT = {
-  users: Array<usersT>,
   folders:Array<DialogFoldersT>,
   chats: Array<DialogsChatsT>,
+  emoji: Array<emojiPacT>
+  stickers: Array<stickerPacT>,
+  isEmojiSelected: boolean,
   activeChat: number | null,
-  emoji: Array<emojiT>
+  activeEmojiPac: number | null,
+  activeStickerPac: number | null,
 }
 
 export type DialogFoldersT = {
@@ -29,9 +27,18 @@ export type DialogsChatsT = {
   lastMessage?: string
 }
 
-export type emojiT = {
-  id: number | undefined,
-  smile: string
+export type emojiPacT = {
+  name: string,
+  isActive: boolean,
+  pacIcon: string
+  smiles: Array<string>
+}
+
+export type stickerPacT = {
+  name: string,
+  isActive: boolean
+  pacPictureUrl: string
+  stickers: Array<string>
 }
 
 export type messagesT = {
@@ -51,6 +58,9 @@ export enum DialogsAT {
   ADD_EMOJI = 'ADD_EMOJI',
   SET_LAST_MESSAGE = 'SET_LAST_MESSAGE',
   SEND_STICKER = 'SEND_STICKER',
+  EMOJI_STICKER_TOGGLE = 'EMOJI_STICKER_TOGGLE',
+  SET_EMOJI_PACK = 'SET_EMOJI_PACK',
+  SET_STICKER_PACK = 'SET_STICKER_PACK'
 }
 
 export type setActiveFolderACT = {
@@ -79,7 +89,6 @@ export type AddNewMessageACT = {
 
 export type addEmojiACT = {
   type: DialogsAT.ADD_EMOJI,
-  id: number,
   smile: string
 }
 
@@ -93,12 +102,31 @@ export type setLastMessageACT = {
 
 export type sendStickerACT = {
   type: DialogsAT.SEND_STICKER,
-  id: number,
-  content: string
+  stickerUrl: string
 }
+
+export type emojiStickerToggleACT = {
+  type: DialogsAT.EMOJI_STICKER_TOGGLE,
+  isEmojiSelected: boolean
+}
+
+export type setEmojiPackACT = {
+  type: DialogsAT.SET_EMOJI_PACK,
+  id: number
+}
+
+export type setStickerPackACT = {
+  type: DialogsAT.SET_STICKER_PACK,
+  id: number
+}
+
 export type DialogsACT = setActiveFolderACT |
   setActiveChatACT |
   setNewMessageACT |
   AddNewMessageACT |
   addEmojiACT |
-  setLastMessageACT
+  setLastMessageACT |
+  sendStickerACT |
+  emojiStickerToggleACT |
+  setEmojiPackACT |
+  setStickerPackACT

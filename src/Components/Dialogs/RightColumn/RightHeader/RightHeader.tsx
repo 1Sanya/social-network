@@ -24,7 +24,7 @@ const RightHeader = () => {
       </div>
     )
   }
-  return <div className={s.tramplayWrapper}>Select Dialog</div>
+  return <div className={s.tramplayWrapper} />
 }
 
 export default RightHeader

@@ -1,28 +1,21 @@
 import { DialogsACT, DialogsAT, DialogsT } from '../../Types/DialogsT'
+import lebedev1 from '../../assets/stickers/lebedev/1.webp'
+import lebedev2 from '../../assets/stickers/lebedev/2.webp'
+import lebedev3 from '../../assets/stickers/lebedev/3.webp'
+import lebedev4 from '../../assets/stickers/lebedev/4.webp'
+import lebedev5 from '../../assets/stickers/lebedev/5.webp'
+import lebedev6 from '../../assets/stickers/lebedev/6.webp'
+import lebedev7 from '../../assets/stickers/lebedev/7.webp'
+import kot1 from '../../assets/stickers/kotyara/1.webp'
+import kot2 from '../../assets/stickers/kotyara/2.webp'
+import kot3 from '../../assets/stickers/kotyara/3.webp'
+import kot4 from '../../assets/stickers/kotyara/4.webp'
+import hova1 from '../../assets/stickers/hova/1.webp'
+import hova2 from '../../assets/stickers/hova/2.webp'
+import hova3 from '../../assets/stickers/hova/3.webp'
+import hova4 from '../../assets/stickers/hova/4.webp'
 
 const initialState: DialogsT = {
-  users: [
-    {
-      id: 1,
-      name: 'Sanya',
-    },
-    {
-      id: 2,
-      name: 'Sofia',
-    },
-    {
-      id: 3,
-      name: 'Zed',
-    },
-    {
-      id: 4,
-      name: 'Yi',
-    },
-    {
-      id: 5,
-      name: 'Tom',
-    },
-  ],
   folders: [
     { id: 1, text: 'my', isActive: true },
     { id: 2, text: 'work', isActive: false },
@@ -42,14 +35,14 @@ const initialState: DialogsT = {
       isActive: false,
       messages: [
         {
-          id: 1,
+          id: 0,
           content: 'https://betzona.ru/uploads/sportnews/1598460139_ee0dc655da02e88747edcd64313856a3.png',
           sendByMe: true,
           isImage: true,
           isSticker: false
         },
         {
-          id: 2,
+          id: 1,
           content: 'Sanya, go fotball',
           sendByMe: false,
           isImage: false,
@@ -111,17 +104,80 @@ const initialState: DialogsT = {
     },
   ],
   activeChat: null,
+  activeEmojiPac: null,
+  activeStickerPac: null,
   emoji: [
-    { smile: '🐑', id: 1 },
-    { smile: '✌️', id: 2 },
-    { smile: '😌', id: 3 },
-    { smile: '😍', id: 4 },
-    { smile: '🥰', id: 5 },
-    { smile: '😒', id: 6 },
-    { smile: '🤡', id: 7 },
-    { smile: '😡', id: 8 },
-    { smile: '😶', id: 9 }
-  ]
+    {
+      name: 'Smileys & people',
+      pacIcon: 'https://cdn.shopify.com/s/files/1/1061/1924/files/Blow_Kiss_Emoji.png?8026536574188759287',
+      isActive: false,
+      smiles: [
+        '😀', '😄', '🤣', '😂', '🙂', '🙃', '😉', '😇', '🥰', '😍', '😘', '😗', '😚', '😙', '😋', '😛', '🤭', '🤨', '😐', '😑', '😶', '😏',
+        '😒', '🙄', '😬', '😌', '😔', '😪', '🤤', '😴', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '🥵', '🥶', '🥴', '😮', '😠', '😖', '😤', '🥱',
+        '😡', '💩', '🤡', '😻', '😽', '💖', '💝', '💘', '❤', '🧡', '💛', '💚', '💙', '💜', '🤎', '👋', '👌', '🤘', '👆', '☝', '👍', '👎', '🤛', '🤜',
+      ]
+    },
+    {
+      name: 'ur friend BD',
+      pacIcon: 'https://learnenglishkids.britishcouncil.org/sites/kids/files/image/RS5227_Birthday%20Cake%20col-web.jpg',
+      isActive: false,
+      smiles: [
+        '🎃', '🎄', '🎆', '🧨', '✨', '🎈', '🎉', '🎊', '🎍', '🎋', '🎎', '🎏', '🏅', '🥇', '🥈', '🥉', '🎖'
+      ]
+    },
+    {
+      name: 'А ТЫ КТО ПО ЗЗ',
+      pacIcon: 'https://www.idrlabs.com/misc_pictures/true-zodiac-sign-card.png',
+      isActive: false,
+      smiles: [
+        '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓', '⛎'
+      ],
+    },
+  ],
+  stickers: [
+    {
+      name: 'НУ СТИКЕРЫ И СТИКЕРЫ',
+      isActive: false,
+      pacPictureUrl: lebedev1,
+      stickers: [
+        'https://cs12.pikabu.ru/post_img/2020/12/12/6/og_og_160776023122585385.jpg',
+        lebedev1,
+        lebedev2,
+        lebedev3,
+        lebedev4,
+        lebedev5,
+        lebedev6,
+        lebedev7,
+      ]
+    },
+    {
+      name: 'Мне срочно нужно котяры',
+      isActive: false,
+      pacPictureUrl: 'https://pbs.twimg.com/media/Ew8qR3oWYAMO7R0.jpg',
+      stickers: [
+        'https://cs11.pikabu.ru/post_img/2019/05/01/12/og_og_1556741130299254066.jpg',
+        'https://pbs.twimg.com/media/Ew8qR3oWYAMO7R0.jpg',
+        kot1,
+        kot2,
+        kot3,
+        kot4,
+      ]
+    },
+    {
+      name: 'выпрямь спину',
+      isActive: false,
+      pacPictureUrl: 'https://cdn131.picsart.com/312469459029211.png',
+      stickers: [
+        'https://cdn131.picsart.com/312469459029211.png',
+        'https://web.telegram.org/6854e711-a39b-486d-9e5b-653e44adddfd',
+        hova1,
+        hova2,
+        hova3,
+        hova4,
+      ]
+    }
+  ],
+  isEmojiSelected: true
 }
 
 const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):DialogsT => {
@@ -203,7 +259,7 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
           if (chat.isActive) {
             return {
               ...chat,
-              newMessage: `${chat.newMessage} ${action.smile}`
+              newMessage: `${chat.newMessage}${action.smile}`
             }
           }
           return chat
@@ -222,7 +278,68 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
           return chat
         })
       }
-
+    case DialogsAT.SEND_STICKER:
+      return <DialogsT>{
+        ...state,
+        chats: state.chats.map((chat) => {
+          if (chat.isActive) {
+            return {
+              ...chat,
+              messages: [
+                {
+                  id: chat.messages?.length,
+                  sendByMe: true,
+                  content: action.stickerUrl,
+                  isImage: false,
+                  isSticker: true
+                },
+                ...chat.messages!
+              ],
+              lastMessage: 'Sticker'
+            }
+          }
+          return chat
+        })
+      }
+    case DialogsAT.EMOJI_STICKER_TOGGLE:
+      return {
+        ...state,
+        isEmojiSelected: action.isEmojiSelected,
+      }
+    case DialogsAT.SET_EMOJI_PACK:
+      return {
+        ...state,
+        activeEmojiPac: action.id === state.activeEmojiPac ? null : action.id,
+        emoji: state.emoji.map((emojiPack, i) => {
+          if (action.id - 1 === i) {
+            return {
+              ...emojiPack,
+              isActive: !emojiPack.isActive
+            }
+          }
+          return {
+            ...emojiPack,
+            isActive: false
+          }
+        })
+      }
+    case DialogsAT.SET_STICKER_PACK:
+      return {
+        ...state,
+        activeStickerPac: action.id === state.activeStickerPac ? null : action.id,
+        stickers: state.stickers.map((stickerPack, i) => {
+          if (action.id - 1 === i) {
+            return {
+              ...stickerPack,
+              isActive: !stickerPack.isActive
+            }
+          }
+          return {
+            ...stickerPack,
+            isActive: false
+          }
+        })
+      }
     default:
       return {
         ...state

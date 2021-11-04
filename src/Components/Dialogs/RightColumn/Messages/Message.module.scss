@@ -5,24 +5,38 @@
 }
 
 .message {
+  display: flex;
+  height: fit-content;
+  max-width: 350px;
+}
+
+.alignRight {
+  align-self: flex-end;
+}
+
+.alignLeft {
+  align-self: flex-start;
+}
+
+.img {
+  margin: 10px;
+  max-width: 200px;
+  min-height: 155px;
+}
+
+.myMessage {
   color: #fff;
   padding: 5px;
   border-radius: 10px;
-  height: fit-content;
-}
-
-.messageByMe {
-  align-self: flex-end;
+  word-break: break-all;
   border: 1px #8774E1 solid;
   background-color: #8774E1;
 }
 
-.messageByCompanion {
-  align-self: flex-start;
+.companionMessage {
   border: 1px #212121 solid;
   background-color: #212121;
-}
-
-.img {
-  max-width: 200px;
+  color: #e0dbdb;
+  border-radius: 10px;
+  padding: 5px;
 }
