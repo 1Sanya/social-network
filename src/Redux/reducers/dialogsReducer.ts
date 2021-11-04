@@ -232,22 +232,25 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
       return <DialogsT>{
         ...state,
         chats: state.chats.map((chat) => {
-          if (chat.isActive) {
-            return {
-              ...chat,
-              messages: [
-                {
-                  id: chat.messages?.length,
-                  sendByMe: true,
-                  content: chat.newMessage,
-                  isImage: action.isImage,
-                  isSticker: action.isSticker
-                },
-                ...chat.messages!,
-              ],
-              lastMessage: action.isSticker ? 'Sticker' : action.isImage ? 'Image' : chat.newMessage,
-              newMessage: ''
+          if (chat.newMessage) {
+            if (chat.isActive) {
+              return {
+                ...chat,
+                messages: [
+                  {
+                    id: chat.messages?.length,
+                    sendByMe: true,
+                    content: chat.newMessage,
+                    isImage: action.isImage,
+                    isSticker: action.isSticker
+                  },
+                  ...chat.messages!,
+                ],
+                lastMessage: action.isSticker ? 'Sticker' : action.isImage ? 'Image' : chat.newMessage,
+                newMessage: ''
+              }
             }
+            return chat
           }
           return chat
         })
