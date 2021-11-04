@@ -22,7 +22,7 @@ import { useTypedSelector } from '../../../../hooks/hooks'
 
 const RightFooter = () => {
   const {
-    chats, activeChat, emoji, stickers, isEmojiSelected, activeEmojiPac
+    chats, activeChat, emoji, stickers, isEmojiSelected, activeEmojiPac, activeStickerPac
   } = useTypedSelector((state) => state.dialogsPage)
   const dispatch = useDispatch()
 
@@ -107,22 +107,42 @@ const RightFooter = () => {
                     </div>
 
                   ))
-                : stickers.map((stickersPac) => (
-                  <div className={s.emojiPacWrapper}>
-                    <div className={s.emojiPacName}>
-                      {stickersPac.name}
+                : activeStickerPac
+                  ? stickers.map((stickersPac, i) => {
+                    if (i + 1 === activeStickerPac) {
+                      return (
+                        <div className={s.emojiPacWrapper}>
+                          <div className={s.emojiPacName}>
+                            {stickersPac.name}
+                          </div>
+                          {stickersPac.stickers.map((sticker) => (
+                            <img
+                              onClick={() => dispatch(sendStickerAC(sticker))}
+                              className={s.singleSticker}
+                              src={sticker}
+                              alt=""
+                            />
+                          ))}
+                        </div>
+                      )
+                    }
+                  })
+                  : stickers.map((stickersPac) => (
+                    <div className={s.emojiPacWrapper}>
+                      <div className={s.emojiPacName}>
+                        {stickersPac.name}
+                      </div>
+                      {stickersPac.stickers.map((sticker) => (
+                        <img
+                          onClick={() => dispatch(sendStickerAC(sticker))}
+                          className={s.singleSticker}
+                          src={sticker}
+                          alt=""
+                        />
+                      ))}
                     </div>
-                    {stickersPac.stickers.map((sticker) => (
-                      <img
-                        onClick={() => dispatch(sendStickerAC(sticker))}
-                        className={s.singleSticker}
-                        src={sticker}
-                        alt=""
-                      />
-                    ))}
-                  </div>
 
-                ))}
+                  ))}
             </div>
             <div className={s.stickersBubbleNav}>
               <div>

@@ -138,7 +138,7 @@ const initialState: DialogsT = {
     {
       name: 'НУ СТИКЕРЫ И СТИКЕРЫ',
       isActive: false,
-      pacPictureUrl: 'blob:https://web.telegram.org/41520a24-d646-4b46-bc42-36ed7f3eb69b',
+      pacPictureUrl: lebedev1,
       stickers: [
         'https://cs12.pikabu.ru/post_img/2020/12/12/6/og_og_160776023122585385.jpg',
         lebedev1,
@@ -153,7 +153,7 @@ const initialState: DialogsT = {
     {
       name: 'Мне срочно нужно котяры',
       isActive: false,
-      pacPictureUrl: 'blob:https://web.telegram.org/3a381c2f-4e70-46d1-a4e7-c914a77e3ee9',
+      pacPictureUrl: 'https://pbs.twimg.com/media/Ew8qR3oWYAMO7R0.jpg',
       stickers: [
         'https://cs11.pikabu.ru/post_img/2019/05/01/12/og_og_1556741130299254066.jpg',
         'https://pbs.twimg.com/media/Ew8qR3oWYAMO7R0.jpg',
@@ -326,7 +326,7 @@ const dialogsReducer = (state:DialogsT = initialState, action: DialogsACT):Dialo
     case DialogsAT.SET_STICKER_PACK:
       return {
         ...state,
-        activeStickerPac: action.id === state.activeEmojiPac ? null : action.id,
+        activeStickerPac: action.id === state.activeStickerPac ? null : action.id,
         stickers: state.stickers.map((stickerPack, i) => {
           if (action.id - 1 === i) {
             return {
